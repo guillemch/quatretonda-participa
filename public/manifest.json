@@ -1,0 +1,10 @@
+{
+  "name": "Wildcard Participa",
+  "short_name": "Participa",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "display": "minimal-ui",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
+}

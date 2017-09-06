@@ -1,0 +1,151 @@
+.ballot-box {
+    background: $gray-lighter;
+    padding: 1.5rem;
+
+    h3 {
+        font-weight: bold;
+    }
+
+    hr {
+        margin: 1rem 0;
+    }
+}
+
+.ballot-block {
+    max-width: 600px;
+    margin: 1rem auto;
+    border: 4px $brand-success solid;
+    padding: 2rem;
+
+    h3 {
+        margin: -2rem;
+        margin-bottom: 2rem;
+        padding: 0.5rem 2rem;
+        background: $brand-success;
+        color: #FFF;
+        font-size: 1.25rem;
+    }
+
+    &--error {
+        border: 4px $brand-danger solid;
+
+        h3 {
+            background: $brand-danger;
+        }
+
+        .fa {
+            font-size: 4rem;
+            animation: thumbs-down 1s;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.ballot-receipt {
+    .ballot {
+        &__edition .btn {
+            margin-top: -0.4rem;
+        }
+
+        &__ref {
+            text-align: center;
+            font-family: $font-family-monospace;
+            margin-bottom: 1rem;
+            border-bottom: 1px $gray-lighter solid;
+
+            img {
+                vertical-align: middle;
+            }
+        }
+
+        &__contents {
+            h4 {
+                color: $gray;
+                font-size: 1.25rem;
+            }
+        }
+
+        &__signature {
+            font-family: $font-family-monospace;
+            font-size: 0.75rem;
+            color: $gray-600;
+            word-break: break-all;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px $gray-lighter solid;
+        }
+
+        &__points {
+            text-align: right;
+            color: $gray-600;
+            font-style: italic;
+        }
+    }
+}
+
+.ballot-lookup {
+    &__input:focus {
+        box-shadow: 0 0 0 3px rgba($brand-primary, .25);
+    }
+}
+
+.ballot-lookup-wrapper .ballot-lookup {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+}
+
+.option-modal {
+    .modal-title {
+        color: $brand-primary;
+    }
+
+    h4 {
+        color: $gray;
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .option-cost {
+        font-size: 2rem;
+    }
+
+    .option-attachments {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    .option-pictures {
+        margin-top: 1rem;
+
+        img {
+            width: 100%;
+            margin: 0.25rem 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .template-2column {
+        .list-group {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        label {
+            width: 50%;
+            height: 100px;
+            align-items: flex-start;
+            overflow: hidden;
+        }
+    }
+
+    .booth-mode .template-2column {
+        .list-group label {
+            width: 33.3%;
+        }
+    }
+}

@@ -1,0 +1,192 @@
+.header {
+    margin-bottom: 2rem;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.social-links {
+    margin: 0 1rem 0 auto;
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 1.25rem;
+    }
+
+    .fa {
+        font-size: 1.75rem;
+    }
+
+    a {
+        display: block;
+        margin-left: 0.5rem;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.languages {
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &__current {
+        list-style: none;
+        border: 1px $gray-400 solid;
+        min-width: 140px;
+
+        & > a {
+            display: block;
+            padding: 0.25rem 1rem;
+
+            .fa {
+                position: absolute;
+                top: 0.5rem;
+                right: 1rem;
+            }
+        }
+
+        &:hover .languages__menu {
+            display: block;
+        }
+
+        &:hover {
+            background: $gray-light;
+            border: 1px $gray-light solid;
+
+            a {
+                text-decoration: none;
+                color: #FFF;
+            }
+        }
+    }
+
+    &__menu {
+        padding: 0;
+        margin: 0;
+        display: none;
+        position: absolute;
+        z-index: 100;
+        left: 0;
+        right: 0;
+        background: $gray-light;
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            display: block;
+            color: #FFF;
+            padding: 0.25rem 1rem;
+            border-top: 1px $gray-600 solid;
+
+            &:hover {
+                background: $gray-600;
+            }
+        }
+    }
+}
+
+.vote-info {
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background: $gray-lighter;
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+    }
+
+    p {
+        font-size: 1rem;
+        color: $gray-light;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.calendar {
+    text-align: center;
+    border: 3px rgba(0, 0, 0, 0.15) solid;
+    margin: -1rem -1rem -1rem auto;
+    min-width: 140px;
+    background: #FFF;
+
+    &__heading {
+        color: #FFF;
+        background: $brand-primary;
+        padding: 0.15rem;
+    }
+
+    &__dates {
+        font-size: 1.35rem;
+        background: #FFF;
+        padding: 0rem 1rem;
+    }
+
+    &__month {
+        font-size: 1.15rem;
+    }
+
+    &__date-columns .col:first-child {
+        border-right: 1px rgba(0, 0, 0, 0.15) dashed;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .logo {
+        order: 2;
+        text-align: center;
+    }
+
+    .links {
+        order: 1;
+        justify-content: center;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px $gray-lighter solid;
+        margin-top: -1rem;
+        padding-top: 1rem;
+
+        .social-links {
+            margin-left: 0;
+        }
+
+        .languages {
+            background: #FFF;
+
+            &__menu a {
+                padding: 1rem;
+            }
+        }
+    }
+
+    .vote-info {
+        flex-direction: column;
+    }
+
+    .calendar {
+        margin: 1rem -1rem -1rem -1rem;
+    }
+}

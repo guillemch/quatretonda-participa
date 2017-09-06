@@ -1,0 +1,130 @@
+.about-block {
+    position: relative;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+    border-left: 1px $gray-lighter solid;
+    padding-left: 1.5rem;
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: -4rem;
+
+        .fa {
+            font-size: 3rem;
+            color: $brand-primary;
+        }
+    }
+
+    h3 {
+        color: $gray;
+        font-size: 1.25rem;
+    }
+}
+
+.options-widget {
+    border-bottom: 1px $gray-lighter solid;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    &:last {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    h4 {
+        color: $gray;
+        font-size: 1.25rem;
+    }
+
+    .card-columns {
+        column-gap: 1.5rem;
+    }
+
+    &__random {
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        color: $gray-500;
+    }
+}
+
+.option {
+    &__card {
+        width: 100%;
+        display: block;
+        position: relative;
+        padding: 1rem;
+        box-shadow: 0px 2px 15px -5px rgba(0, 0, 0, 0.5);
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
+        transition: ease-out 0.1s;
+
+        &:hover {
+            text-decoration: none;
+            box-shadow: 0px 2px 25px -5px rgba(0, 0, 0, 0.6);
+            transform: scale(1.02);
+        }
+
+        h5 {
+            margin-bottom: 0;
+        }
+    }
+
+    &__cost {
+        color: $gray-500;
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+    }
+}
+
+.option.card {
+    border: 0;
+    margin: 0;
+}
+
+.calendars {
+    margin: 2rem 0;
+
+    .calendar {
+        margin: 0;
+    }
+}
+
+.categories {
+    margin-bottom: 1rem;
+}
+
+.categories li {
+    color: $gray;
+	margin-bottom: 0.5rem;
+}
+
+.columns {
+    column-count: 3;
+}
+
+@include media-breakpoint-down(sm) {
+    .about-block {
+        margin-left: 0;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        padding-left: 0;
+        border-left: 0;
+        border-bottom: 1px $gray-lighter solid;
+
+        &__icon {
+            text-align: center;
+            position: static;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .columns {
+        column-count: 2;
+    }
+}

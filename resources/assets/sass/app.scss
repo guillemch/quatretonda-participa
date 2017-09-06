@@ -1,0 +1,37 @@
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-vue/dist/bootstrap-vue";
+
+// Global
+.main-container {
+    background: #FFF;
+    padding: 1rem;
+}
+
+hr {
+    margin: 2rem 0;
+}
+
+input,
+button {
+    font-family: $font-family-base;
+}
+
+@include media-breakpoint-up(sm) {
+    .main-container {
+        padding: 2rem;
+    }
+}
+
+// Modules
+@import "header";
+@import "sidebar";
+@import "about";
+@import "booth";
+@import "results";
+@import "placeholder";
+@import "footer";
+@import "animations";

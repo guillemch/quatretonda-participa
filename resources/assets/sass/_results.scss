@@ -1,0 +1,79 @@
+.results-page {
+    h2 {
+        .fa {
+            color: $brand-primary;
+        }
+    }
+}
+
+.census {
+    margin-top: 2rem;
+}
+
+.results {
+    h3 {
+        margin-top: 2rem;
+    }
+
+    h5 {
+        color: $gray-dark;
+        padding-right: 2rem;
+    }
+
+    &__section {
+        font-size: 1.25rem;
+        color: #FFF;
+        background: $gray-500;
+        margin: 1rem 0;
+        padding: 0.5rem 0.75rem;
+
+        &--top {
+            background: $brand-primary;
+        }
+    }
+
+    &__card {
+        width: 100%;
+        display: block;
+        position: relative;
+        padding: 1rem 3rem 5rem 1rem;
+        box-shadow: 0px 2px 15px -5px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+        transition: ease-out 0.1s;
+
+        &:hover {
+            text-decoration: none;
+            box-shadow: 0px 2px 25px -5px rgba(0, 0, 0, 0.6);
+            transform: scale(1.02);
+        }
+    }
+
+    &__votes {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+    }
+
+    &__pos {
+        font-size: 2rem;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        color: $gray-500;
+    }
+
+    &__points {
+        color: $gray;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .progress {
+        border-radius: 20px;
+    }
+
+    .progress-bar {
+        animation: loadbar 2s normal forwards ease-in-out;
+    }
+}

@@ -1,0 +1,84 @@
+/* Sidebar specific variables */
+$sidebar-background: $gray-lighter;
+$sidebar-text: $gray-light;
+$sidebar-text-secondary: lighten($sidebar-text, 15%);
+
+.sidebar {
+    &__box {
+        background: $sidebar-background;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        h3 {
+            font-size: 1.55rem;
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            color: $sidebar-text;
+        }
+
+        hr {
+            margin: 1rem 0;
+        }
+    }
+
+    &__box--main {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 1rem;
+            border-top: 1rem transparent solid;
+            border-left: 1rem transparent solid;
+            border-bottom: 1rem transparent solid;
+            border-right: 1rem $sidebar-background solid;
+        }
+    }
+
+    &__propose {
+        margin: 1rem -1.5rem -1.5rem -1.5rem;
+    }
+
+    &__secondary {
+        color: $sidebar-text-secondary;
+        font-size: 0.80rem;
+        display: block;
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 0.5rem;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        &__item {
+        	display: flex;
+        }
+
+        .fa {
+            margin-right: 0.5rem;
+        }
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+@include media-breakpoint-down(sm) {
+    .sidebar__box--main:before {
+        display: none;
+    }
+}
