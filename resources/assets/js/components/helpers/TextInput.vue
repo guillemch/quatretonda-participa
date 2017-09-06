@@ -86,6 +86,10 @@
             padding-left: 1rem;
             padding-bottom: 0.5rem;
             border-width: 0.20rem;
+
+            &:focus {
+                border-color: $teal;
+            }
         }
     }
 

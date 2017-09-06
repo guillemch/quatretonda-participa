@@ -82,7 +82,7 @@
     }
 
     .selected {
-        background: lighten($brand-primary, 50%);
+        background: lighten($teal, 45%);
         box-shadow: inset -4px 0px 0px 0px $brand-primary;
     }
 </style>
