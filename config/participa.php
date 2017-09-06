@@ -9,32 +9,32 @@ return [
     */
 
     /* The name of the city */
-    'municipality' => 'Any City',
+    'municipality' => 'Quatretonda',
 
     /* The name of the council */
-    'council_name' => 'Any Council',
+    'council_name' => 'Ajuntament de Quatretonda',
 
     /* The council's home page */
-    'council_url' => 'https://anycity.com',
+    'council_url' => 'http://www.quatretonda.es',
 
     /* The council's logo / coat of arms */
     'council_logo' => 'council.png',
 
     /* The e-mail where users can contact for support */
-    'contact_email' => 'participa@disedit.com',
+    'contact_email' => 'incidencies@quatretondaparticipa.com',
 
     /* The council's address */
-    'contact_address' => 'Pl. Major, 1',
+    'contact_address' => 'Ausias March, 5 - CP: 46837',
 
     /* The council's contact phone */
-    'contact_phone' => '44343242',
+    'contact_phone' => '96 226 45 71',
 
     /* The council's facebook page and app ID */
-    'facebook' => 'https://facebook.com/council',
+    'facebook' => 'https://www.facebook.com/ajuntamentquatretonda',
     'facebook_app_id' => '180444172483336',
 
     /* The council's twitter account */
-    'twitter' => 'infoDisedit',
+    'twitter' => 'ajQuatretonda',
 
     /*
     |--------------------------------------------------------------------------
@@ -46,7 +46,7 @@ return [
     'logo' => 'logo.png',
 
     /* Primary color of the application */
-    'primary_color' => '#2980b9',
+    'primary_color' => '#9E0057',
 
     /* Maximum votes a single IP may cast */
     'max_per_ip' => 20,
