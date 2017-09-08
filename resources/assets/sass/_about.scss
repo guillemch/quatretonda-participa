@@ -17,8 +17,14 @@
     }
 
     h3 {
-        color: $gray;
+        color: $gray-light;
         font-size: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    p {
+        line-height: 200%;
+        text-align: justify;
     }
 }
 
