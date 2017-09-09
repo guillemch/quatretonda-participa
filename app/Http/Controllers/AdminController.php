@@ -132,6 +132,10 @@ class AdminController extends Controller
             $output = Artisan::output();
             $integrity = stripos($output, 'Result integrity check failed');
             $integrity = ($integrity !== false) ? false : true;
+            $time = time();
+        } else {
+            $integrity = cache('last_tally_integrity_' . $edition->id);
+            $time = cache('last_tally_finished_' . $edition->id);
         }
 
         /* Retreive the results */
@@ -145,8 +149,8 @@ class AdminController extends Controller
             'census' => $census,
             'turnout' => $turnout,
             'results' => $results,
-            'integrity' => cache('last_tally_integrity_' . $edition->id),
-            'time' => date('d-m-Y H:i', cache('last_tally_finished_' . $edition->id))
+            'integrity' => $integrity,
+            'time' => date('d-m-Y H:i', $time)
         ];
 
         return response()->json($response);
