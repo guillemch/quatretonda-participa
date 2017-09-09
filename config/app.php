@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Wildcard Participa',
+    'name' => env('APP_NAME', 'Wildcard Participa'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://wildcardparticipa.com'),
+    'url' => env('APP_URL', 'https://quatretondaparticipa.com'),
 
     /*
     |--------------------------------------------------------------------------
