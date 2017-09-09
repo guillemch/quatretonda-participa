@@ -2,7 +2,7 @@
     <h4>@lang('participa.ballot_lookup')</h4>
     <p class="{{ ($in_sidebar) ? 'sidebar__secondary' : '' }}">@lang('participa.ballot_lookup_help')</p>
 
-    <form method="get" action="{{ url('ballot/lookup') }}">
+    <form method="get" action="{{ secure_url('ballot/lookup') }}">
         <label class="sr-only">@lang('participa.ballot_ref')</label>
         <div class="input-group">
             <input type="search" name="ref" class="form-control ballot-lookup__input" placeholder="@lang('participa.ballot_ref')" aria-label="@lang('participa.ballot_ref')" required="required">

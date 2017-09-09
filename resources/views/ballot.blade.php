@@ -9,7 +9,7 @@
                     <a href="javascript:window.print()" class="pull-right btn-sm btn btn-success d-print-none"><i class="fa fa-print" aria-hidden="true"></i> @lang('participa.print')</a>
                 </h3>
                 <h2 class="ballot__ref">
-                    <img src="{{ url('api/ballot/qr/' . $ballot->ref) }}" alt="QR code" width="75" />
+                    <img src="{{ secure_url('api/ballot/qr/' . $ballot->ref) }}" alt="QR code" width="75" />
                     {{ $ballot->ref }}
                 </h2>
 

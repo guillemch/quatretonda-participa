@@ -26,7 +26,7 @@
             <header class="header row">
                 <div class="col-md-5 logo">
                     <a href="/">
-                        <h1><img src="{{ asset('images/' . config('participa.logo', 'logo.png')) }}" alt="{{ config('app.name', 'Participa') }}" /></h1>
+                        <h1><img src="{{ secure_asset('images/' . config('participa.logo', 'logo.png')) }}" alt="{{ config('app.name', 'Participa') }}" /></h1>
                     </a>
                 </div>
                 <div class="col-md-7 links d-flex flex-row d-print-none">
