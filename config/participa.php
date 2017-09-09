@@ -81,7 +81,6 @@ return [
 
     'languages' => [
         'ca' => 'Valencià',
-        'es' => 'Castellano',
-        'en' => 'English'
+        'es' => 'Castellano'
     ]
 ];
