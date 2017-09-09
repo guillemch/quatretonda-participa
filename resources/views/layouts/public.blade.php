@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-7 links d-flex flex-row d-print-none">
                     @include('components/social')
-                    @include('components/languages')
+                    {{--@include('components/languages')--}}
                 </div>
             </header>
 

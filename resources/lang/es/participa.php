@@ -7,41 +7,41 @@ return [
     | Site name, locales and metatags
     |--------------------------------------------------------------------------
     */
-    'locale' => 'ca',
+    'locale' => 'es',
     'twitter_locale' => 'es',
-    'facebook_locale' => 'ca_ES',
-    'heading' => 'Tu decideixes en què inverteix l\'Ajuntament!',
-    'subheading' => 'El Govern de [city_name] t\'obri la possibilitat de participar activament en les decisions que més t\'afecten.',
-    'tweet' => '',
-    'description' => 'Tu decideixes les inversions de l\'Ajuntament. El Govern de [city_name] t\'obri la possibilitat de participar activament en les decisions que més t\'afecten. Junts volem millorar [city_name], i el teu vot compta!',
-    'keywords' => '[city_name], ajuntament, ayuntamiento, govern, obert, participacio ciutadana, democracia participativa, [city_name] participa, votació, votación, referendum',
+    'facebook_locale' => 'es_ES',
+    'heading' => '¡Tu decides las inversiones del Ayuntamiento!',
+    'subheading' => 'El Gobierno de Quatretonda te ofrece la posibilidad de participar activamente en las decisiones que más te afectan.',
+    'tweet' => 'He votat en què projectes vull que @ajQuatretonda invertisca',
+    'description' => 'Tu decides las inversiones del Ayuntamiento. El Gobierno de Quatretonda te ofrece la posibilidad de participar activamente en las decisiones que más te afectan. ¡Juntos queremos mejorar Quatretonda, y tu voto cuenta!',
+    'keywords' => 'quatretonda, ajuntament, ayuntamiento, govern, obert, participacio ciutadana, democracia participativa, quatretonda participa, votació, votación, referendum',
 
     /*
     |--------------------------------------------------------------------------
     | Global
     |--------------------------------------------------------------------------
     */
-    'calendar_heading' => 'Votació',
-    'help' => 'Incidències i ajuda',
+    'calendar_heading' => 'Votación',
+    'help' => 'Incidencias y ayuda',
     'is_archive' => 'Aquesta votació va finalitzar el <strong>:end_date</strong> i està arxivada. Ves a l\'<a href="/">edició actual</a> per a consultar la votació en curs.',
     'error' => 'Error',
     'vote' => 'Vota',
-    'print' => 'Imprimeix',
-    'close' => 'Tanca',
-    'ordered_randomly' => 'Ordenades alteatòriament',
+    'print' => 'Imprimir',
+    'close' => 'Cerrar',
+    'ordered_randomly' => 'Ordenadas aleatoriamente',
 
     /*
     |--------------------------------------------------------------------------
     | Sidebar
     |--------------------------------------------------------------------------
     */
-    'poll' => 'Votació',
-    'current_poll' => 'Votació actual',
-    'sidebar_dates' => 'Des del :start_date fins a :end_date',
-    'more_info' => 'Més informació',
-    'propose_cta' => 'Envia la teua proposta',
-    'voting_places' => 'Punts de votació',
-    'voting_text' => 'Si necessites ajuda amb la votació, pots dirigir-te a un dels següents punts de votació en persona.',
+    'poll' => 'Votación',
+    'current_poll' => 'Votación actual',
+    'sidebar_dates' => 'Desde :start_date hasta :end_date',
+    'more_info' => 'Más información',
+    'propose_cta' => 'Envía tu propuesta',
+    'voting_places' => 'Puntos de votación',
+    'voting_text' => 'Si necesitas ayuda con la votación, pots dirigir-te a un dels següents punts de votació en persona.',
     'contact' => 'Dubes o incidències?',
     'contact_text' => 'Ens pots contactar a la següent adreça electrònica: <a href="mailto::contact_email">:contact_email</a>.',
     'past_editions' => 'Votacions anteriors',
@@ -93,7 +93,7 @@ return [
     | Months
     |--------------------------------------------------------------------------
     */
-    'months_short' => ['Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Oct', 'Nov', 'Des'],
-    'months_long' => ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol', 'agost', 'octubre', 'novembre', 'desembre'],
+    'months_short' => ['Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Oct', 'Set', 'Nov', 'Des'],
+    'months_long' => ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol', 'agost', 'setembre', 'octubre', 'novembre', 'desembre'],
 
 ];
