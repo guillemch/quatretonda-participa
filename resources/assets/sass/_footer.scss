@@ -1,3 +1,19 @@
+.footer {
+    background: #00BAA3;
+    color: #FFF;
+    margin: -2rem;
+    padding: 2rem;
+
+    a {
+        color: #FFF;
+        opacity: 0.75;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
 .council-details {
     p:last-child {
         margin-bottom: 0;
