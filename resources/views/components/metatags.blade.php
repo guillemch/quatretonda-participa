@@ -3,9 +3,9 @@
 <meta name="keywords" content="@lang('participa.keywords')" />
 <meta name="description" content="@lang('participa.description')" />
 <link rel="manifest" href="{{ url('manifest.json') }}">
-<link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
-<link rel="icon" type="image/png" href="{{ asset('images/favicon.big.png') }}" sizes="192x192">
-<link rel="apple-touch-icon" href="{{ asset('images/favicon.big.png') }}">
+<link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+<link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" sizes="192x192">
+<link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
 <meta name="apple-mobile-web-app-title" content="{{ config('app.name', 'Participa') }}">
 <meta name="msapplication-TileColor" content="{{ config('participa.primary_color', '#2980b9') }}">
 <meta name="msapplication-TileImage" content="{{ asset('images/favicon.big.png') }}">
