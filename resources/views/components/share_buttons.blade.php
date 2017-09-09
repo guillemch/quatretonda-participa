@@ -8,7 +8,7 @@
     height="20">
  </iframe>
  <iframe
-    src="https://platform.twitter.com/widgets/tweet_button.html?url={{ url('') }}&via={{ config('participa.twitter', 'infoDisedit') }}&related={{ config('participa.twitter', 'infoDisedit') }}&text={{ urlencode($slot) }}&lang=@lang('participa.twitter_locale')"
+    src="https://platform.twitter.com/widgets/tweet_button.html?url={{ url('') }}&via={{ config('participa.twitter', 'infoDisedit') }}&related={{ config('participa.twitter', 'infoDisedit') }}&text={{ rawurlencode($slot) }}&lang=@lang('participa.twitter_locale')"
     class="twitter"
     width="120"
     height="20"
