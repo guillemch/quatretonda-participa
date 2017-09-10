@@ -5,8 +5,8 @@
     <div class="card">
         <div class="card-header sr-only">Login</div>
         <div class="card-body">
-            <h1 class="login__logo"><img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name', 'Participa') }}" /></h1>
-            <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+            <h1 class="login__logo"><img src="{{ secure_asset('images/logo.png') }}" alt="{{ config('app.name', 'Participa') }}" /></h1>
+            <form class="form-horizontal" role="form" method="POST" action="{{ secure_url('/login') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group">
