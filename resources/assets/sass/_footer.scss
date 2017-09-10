@@ -1,12 +1,13 @@
 .page-footer {
     background: #00BAA3;
     color: #FFF;
-    margin: -2rem;
-    padding: 2rem;
+    margin: -1rem;
+    padding: 1rem;
 
     a {
         color: #FFF;
         opacity: 0.75;
+        word-break: break-word;
 
         &:hover {
             opacity: 1;
@@ -27,4 +28,11 @@
 
 address {
     margin-bottom: 0;
+}
+
+@include media-breakpoint-up(sm) {
+    .page-footer {
+        margin: -2rem;
+        padding: 2rem;
+    }
 }
