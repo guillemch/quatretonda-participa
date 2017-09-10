@@ -19,9 +19,9 @@
 <meta property="og:type" content="website"/>
 <meta property="og:description" content="@lang('participa.description')"/>
 <meta property="og:url" content="{{ URL::current() }}" />
-<meta property="twitter:site" content="@{{ config('participa.twitter', 'infoDisedit') }}"/>
+<meta property="twitter:site" content="{{ '@' . config('participa.twitter', 'infoDisedit') }}"/>
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="@yield('title'){{ config('app.name', 'Participa') }}"/>
 <meta property="twitter:description" content="@lang('participa.description')"/>
-<meta property="twitter:image" content="{{ config('participa.thumbnail', '/images/thumbnail.png') }}"/>
+<meta property="twitter:image" content="{{ secure_asset('images/thumbnail.png') }}"/>
 <meta property="twitter:url" content="{{ URL::current() }}"/>
