@@ -42,7 +42,7 @@ return [
     'propose_cta' => 'Envia la teua proposta',
     'voting_places' => 'Punts de votació',
     'voting_text' => 'Si necessites ajuda amb la votació, pots dirigir-te a un dels següents punts de votació en persona.',
-    'contact' => 'Dubes o incidències?',
+    'contact' => 'Dubtes o incidències?',
     'contact_text' => 'Ens pots contactar a la següent adreça electrònica: <a href="mailto::contact_email">:contact_email</a>.',
     'past_editions' => 'Votacions anteriors',
 
