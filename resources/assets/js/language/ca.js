@@ -49,7 +49,7 @@ export default {
     booth_receipt: {
         heading: 'Gràcies per participar!',
         success: 'El teu vot ha estat emés correctament',
-        social: 'Convida les teues amistats a participar i fem la [city_name] que volem entre tots i totes ;)',
+        social: 'Convida les teues amistats a participar i fem la Quatretonda que volem entre tots i totes ;)',
         back_to_council: 'Ves a la pàgina de l\'Ajuntament',
         back_to_booth: 'Emet un altre vot'
     },
