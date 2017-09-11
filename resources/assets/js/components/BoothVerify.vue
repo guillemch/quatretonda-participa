@@ -5,7 +5,7 @@
         </div>
         <div class="col-md-12">
             <div class="ballot-box ballot-phone">
-                <verify-in-person v-if="boothMode" />
+                <verify-in-person v-if="boothMode || disableSMSVerification" />
                 <verify-phone v-else :phone="phone" :country-code="countryCode" :sms-code="smsCode" :sms-requested="smsRequested" />
             </div>
         </div>
@@ -36,12 +36,14 @@
 
         data() {
             return {
-                boothMode: false
+                boothMode: false,
+                disableSMSVerification: false
             }
         },
 
         created() {
             this.boothMode = window.BoothMode;
+            this.disableSMSVerification = window.BoothConfig.disable_SMS_verification;
         }
     }
 </script>
