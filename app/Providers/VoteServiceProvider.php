@@ -103,7 +103,7 @@ class VoteServiceProvider extends ServiceProvider
          */
         Validator::extend('sms_code', function($attribute, $value, $params) {
             $voter = Voter::findBySID($params[0], $params[1]);
-            $voterToken = $voter->SMS_token;
+            $voterToken = ($voter) ? $voter->SMS_token : null;
             $providedToken = $value;
             return ($voterToken == $providedToken);
         });
