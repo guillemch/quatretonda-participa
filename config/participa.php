@@ -72,6 +72,9 @@ return [
     /* Should SMS verification be required for online voting? */
     'disable_SMS_verification' => true,
 
+    /* Set up Google Analytics tracking */
+    'google_analytics_ID' => 'UA-106217417-1',
+
     /*
     |--------------------------------------------------------------------------
     | Languages
