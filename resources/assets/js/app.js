@@ -3,6 +3,9 @@ require('./bootstrap');
 window.Vue = require('vue');
 window.Bus = new Vue();
 
+import Raven from 'raven-js';
+import RavenVue from 'raven-js/plugins/vue';
+
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import BootstrapVue from 'bootstrap-vue';
@@ -19,6 +22,11 @@ import Spanish from './language/es.js';
 import English from './language/en.js';
 
 window.Participa = new Participa();
+
+Raven
+    .config('https://b3097c5d56ae4ad4bfda9b6ab7ba0030@sentry.io/216160')
+    .addPlugin(RavenVue, Vue)
+    .install();
 
 Vue.use(VueRouter);
 Vue.use(VueI18n);
