@@ -159,6 +159,10 @@
     .logo {
         order: 2;
         text-align: center;
+
+        img {
+            max-width: 100%;
+        }
     }
 
     .links {
