@@ -23,7 +23,7 @@
             </div>
             <div class="social-plugins">
                 <iframe
-                    :src="'https://www.facebook.com/plugins/like.php?href=' + encodeURI(shareable_url) + '&width=198&layout=button_count&action=like&size=large&show_faces=false&share=true&height=37&appId=252515324782640&locale=ca_ES'"
+                    :src="'https://www.facebook.com/plugins/like.php?href=' + encodeURI(shareable_url) + '&width=198&layout=button_count&action=like&size=large&show_faces=false&share=true&height=37&appId=180444172483336&locale=ca_ES'"
                     width="213"
                     allowTransparency="true"
                     scrolling="no"
