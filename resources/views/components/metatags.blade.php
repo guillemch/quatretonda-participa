@@ -2,7 +2,7 @@
 <meta name="robots" content="index, follow" />
 <meta name="keywords" content="@lang('participa.keywords')" />
 <meta name="description" content="@lang('participa.description')" />
-<link rel="manifest" href="{{ url('manifest.json') }}">
+<link rel="manifest" href="{{ secure_url('manifest.json') }}">
 <link rel="shortcut icon" href="{{ secure_asset('favicon.png') }}">
 <link rel="icon" type="image/png" href="{{ secure_asset('favicon.png') }}" sizes="192x192">
 <link rel="apple-touch-icon" href="{{ secure_asset('favicon.png') }}">
