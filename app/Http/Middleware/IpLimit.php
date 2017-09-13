@@ -23,13 +23,13 @@ class IpLimit
 
         if(Limit::exceeded($request, 'IDFailedLookUp', $maxFailedLookUps)) {
             return response()->json([
-                'IpLimit' => ['Too many failed lookups']
+                'IpLimit' => [__('participa.lookup_limit_exceeded')]
             ], 422);
         }
 
         if(!$inPerson && Limit::exceeded($request, 'Vote', $maxVotes)) {
             return response()->json([
-                'IpLimit' => ['Exceeded']
+                'IpLimit' => [__('participa.ip_limit_exceeded')]
             ], 422);
         }
 

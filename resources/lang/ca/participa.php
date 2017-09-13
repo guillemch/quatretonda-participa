@@ -95,6 +95,8 @@ return [
     */
     'error_404' => 'Error 404',
     'error_404_text' => 'No hem trobat la pàgina que estaves buscant.',
+    'ip_limit_exceeded' => 'Has sobrepassat el límit de vots que una mateixa IP pot emetre',
+    'lookup_limit_exceeded' => 'Has introduit un Identificador erroni massa vegades',
 
     /*
     |--------------------------------------------------------------------------
