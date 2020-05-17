@@ -16,7 +16,7 @@ $factory->define(App\Question::class, function (Faker\Generator $faker) {
     return [
         'question' => $faker->sentence(12),
         'description' => $faker->paragraph(2),
-        'template' => $faker->randomElement(['simple','2column']),
+        'template' => $faker->randomElement(['cards', 'simple','2column']),
         'min_options' => 0, // $faker->numberBetween(0,1)
         'max_options' => $faker->numberBetween(1,3),
         'display_cost' => $faker->boolean(),

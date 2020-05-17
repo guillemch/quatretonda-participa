@@ -64,14 +64,14 @@ class NewEdition extends Command
         $edition->publish_results = $resultsDay;
 
         $publish = $this->choice('Publish now?', ['Yes', 'No'], 0);
-        $edition->published = ($publish == 'Yes') ? 1 : 0;
+        $edition->published = ($publish === 'Yes') ? 1 : 0;
 
         $edition->save();
         $this->line('Edition created successfully.');
 
         $addQuestions = $this->choice('Add questions and options?', ['Yes', 'No'], 0);
 
-        if($addQuestions == 'Yes') {
+        if ($addQuestions == 'Yes') {
             $this->call('edition:questions', ['--edition' => $edition->id]);
         }
     }

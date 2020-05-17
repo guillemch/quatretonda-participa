@@ -1,61 +1,65 @@
 export default {
-    global: {
-        tweet: ''
-    },
-    option: {
-        cost: 'Cost',
-        motivation: 'Motivació',
-        attachments: 'Documentació adjunta'
-    },
-    error: {
-        heading: 'Error',
-        challenge: 'Si penses que es tracta d\'un error o necessites ajuda, posa\'t en contacte amb',
-        back: 'Torna'
-    },
-    booth_identification: {
-        heading: 'Identificació',
-        subheading: 'Pots votar si tens més de <strong>{min_age} anys</strong> i estàs empadronat a <strong>{municipality}</strong>',
-        label: 'DNI, NIE o Passport',
-        tooltip: 'Passaport només si eres resident extranger',
-        button: 'Vota',
-        anonymous_voting: 'El teu vot és anònim i serà encriptat'
-    },
-    booth_option: {
-        more_info: 'Més info',
-    },
-    verify_summary: {
-        edit: 'Edita papereta',
-        blank: 'Vot en blanc'
-    },
-    verify_phone: {
-        heading: 'Verifica la teua papereta',
-        phone_label: 'Mòbil',
-        code_label: 'Codi SMS',
-        code_tooltip: 'Codi numèric de 6 digits',
-        phone_subheading: 'Escriu el teu telèfon mòbil. T\'enviarem un codi per SMS per a autenticar el teu vot.',
-        code_subheading: 'Introdueix a continuació el codi que has rebut al teu mòbil.',
-        code_smalltext: 'L\'SMS pot tardar uns minuts en arribar. Assegura\'t que el teu mòbil està encés i té cobertura.',
-        request_sms_button: 'Envia\'m el codi',
-        cast_ballot_button: 'Confirma el meu vot',
-        country_code: 'Prefixe internacional',
-    },
-    verify_in_person: {
-        button: 'Confirma'
-    },
-    verify_flags: {
-        SMS_already_sent: 'Introdueix el codi SMS ja es va enviar al mòbil introduit el <strong>{time}</strong>',
-        SMS_exceeded: 'Has sobrepassat el límit de <strong>{sms_max_attempts} intents SMSs per votant</strong>. Introdueix el codi que vares rebre al número <strong>{last_number}</strong> el <strong>{time}</strong>'
-    },
-    booth_receipt: {
-        heading: 'Gràcies per participar!',
-        success: 'El teu vot ha estat emés correctament',
-        social: 'Convida les teues amistats a participar i fem la [city_name] que volem entre tots i totes ;)',
-        back_to_council: 'Ves a la pàgina de l\'Ajuntament',
-        back_to_booth: 'Emet un altre vot'
-    },
-    option_modal: {
-        select_button: 'Selecciona aquesta opció',
-        deselect_button: 'Deselecciona aquesta opció',
-        dismiss_button: 'Tanca'
-    }
+  global: {
+    tweet: 'He votado en qué proyectos quiero que Quatretonda invierta'
+  },
+  option: {
+    cost: 'Coste',
+    motivation: 'Motivación',
+    attachments: 'Documentación adjunta'
+  },
+  error: {
+    heading: 'Error',
+    challenge: 'Si piensas que se trata de un error o necesitas ayuda, ponte en contacto con',
+    back: 'Vuelve'
+  },
+  booth: {
+    label: 'Formulario de votación'
+  },
+  booth_identification: {
+    heading: 'Identificación',
+    subheading: 'Puedes votar si tienes más de <strong>{min_age} años</strong> y estás empadronado en <strong>{municipality}</strong>',
+    label: 'DNI, NIE o Pasaporte',
+    tooltip: 'Pasaporte sólo si eres residente extranjero',
+    button: 'Vota',
+    anonymous_voting: 'Tu voto es anónimo y será encriptado'
+  },
+  booth_option: {
+    more_info: 'Más info',
+  },
+  verify_summary: {
+    edit: 'Edita papeleta',
+    blank: 'Voto en blanco'
+  },
+  verify_phone: {
+    heading: 'Verifica tu papeleta',
+    phone_label: 'Móvil',
+    code_label: 'Código SMS',
+    code_tooltip: 'Código numérico de 6 dígitos',
+    phone_subheading: 'Escribe tu teléfono móvil. Te enviaremos un código por SMS para autentificar tu voto.',
+    code_subheading: 'Introduce a continuación el código que has recibido en tu móvil.',
+    code_smalltext: 'El SMS puede tardar unos minutos en llegar. Asegúrate que tu móvil está encendido y tiene cobertura.',
+    request_sms_button: 'Envíame el código',
+    cast_ballot_button: 'Confirma mi voto',
+    country_code: 'Prefijo internacional',
+    modify_phone: 'Modificar número de móvil'
+  },
+  verify_in_person: {
+    button: 'Confirma'
+  },
+  verify_flags: {
+    SMS_already_sent: 'El código SMS ya se envió al móvil introducido el <strong>{time}</strong>',
+    SMS_exceeded: 'Has sobrepasado el límite de <strong>{sms_max_attempts} intentos SMSs por votante</strong>. Introduce el código que recibiste en el número <strong>{last_number}</strong> el <strong>{time}</strong>'
+  },
+  booth_receipt: {
+    heading: 'Gracias por participar!',
+    success: 'Teu voto ha sido emitido correctamente',
+    social: 'Invita tus amistades a participar y hagamos la Quatretonda que queremos entre todos y todas ;)',
+    back_to_council: 'Ves a la página del Ayuntamiento',
+    back_to_booth: 'Emite otro voto'
+  },
+  option_modal: {
+    select_button: 'Selecciona esta opción',
+    deselect_button: 'Deselecciona esta opción',
+    dismiss_button: 'Cierra'
+  }
 };

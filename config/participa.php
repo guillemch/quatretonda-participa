@@ -43,10 +43,13 @@ return [
     */
 
     /* Main logo to display on all pages */
-    'logo' => 'logo.png',
+    'logo' => null,
 
-    /* Primary color of the application */
-    'primary_color' => '#9E0057',
+    /* Main logo for dark backgrounds */
+    'logo_dark' => null,
+
+    /* Navbar: light or colorful */
+    'navbar' => 'colorful',
 
     /* Maximum votes a single IP may cast */
     'max_per_ip' => 20,
@@ -60,7 +63,11 @@ return [
     /* Whether voting should be anonymous or not */
     'anonymous_voting' => false,
 
-    /* Whether admins may look up IDs to troubleshoot in-person voting */
+    /* Whether IDs are hashed or not */
+    'hashed_SIDs' => env('PARTICIPA_HASHED', false),
+
+    /* Whether admins may look up IDs to troubleshoot in-person voting.
+       If IDs are hashed this option cannot be true and will be ignored */
     'enable_ID_lookup' => true,
 
     /* Minumum age at which citizens may participate */
@@ -71,6 +78,9 @@ return [
 
     /* Should SMS verification be required for online voting? */
     'disable_SMS_verification' => false,
+
+    /* Primary color of the application */
+    'primary_color' => '#2980b9',
 
     /* Set up Google Analytics tracking */
     'google_analytics_ID' => 'UA-106217417-1',
@@ -86,7 +96,6 @@ return [
     */
 
     'languages' => [
-        'ca' => 'Valencià',
-        'es' => 'Castellano'
+        'ca' => 'Valencià'
     ]
 ];

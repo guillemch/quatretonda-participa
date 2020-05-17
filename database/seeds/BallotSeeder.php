@@ -18,7 +18,7 @@ class BallotSeeder extends Seeder
         $census = Voter::all()->count();
         $thirtyPercent = 30 * $census / 100;
 
-        $voters = Voter::orderByRaw('rand()')->limit($thirtyPercent)->get()->each(function($voter) {
+        $voters = Voter::orderByRaw('rand()')->limit($thirtyPercent)->get()->each(function ($voter) {
             $voter->ballot_cast = 1;
             $voter->ballot_time = date('Y-m-d H:i:s');
             $voter->signature = $voter->createSignature();
@@ -33,7 +33,7 @@ class BallotSeeder extends Seeder
             $ballot->signature = $ballot->createSignature();
             $ballot->by_user_id = 1;
 
-            if(config('participa.anonymous_voting') === false) {
+            if (config('participa.anonymous_voting') === false) {
                 $ballot->voter_id = $voter->id;
                 $ballot->ip_address = '1.1.1.1';
                 $ballot->user_agent = 'Seeder';
@@ -52,7 +52,7 @@ class BallotSeeder extends Seeder
 
         $questions = Question::where('edition_id', $editionId)->get();
 
-        foreach($questions as $question) {
+        foreach ($questions as $question) {
             $maxToSelect = $question->max_options;
             $minToSelect = $question->min_options;
 
@@ -62,7 +62,7 @@ class BallotSeeder extends Seeder
 
             $selectedOptions = $faker->randomElements($options, $count);
 
-            foreach($selectedOptions as $option){
+            foreach ($selectedOptions as $option){
                 $ballot[$question->id][] = $option['id'];
             }
         }

@@ -97,19 +97,21 @@ return [
 
     'custom' => [
         'SID' => [
-            'on_census' => 'No hem trobat al cens l\'identificador introduit',
-            'has_not_voted'=> 'L\'identificador introduit ja ha emès un vot.',
-            'ip_limit' => 'Has sobrepassat el número de vots que una mateixa IP pot emetre',
+            'on_census' => 'The ID entered was not found on the census',
+            'has_not_voted'=> 'This ID has already cast a vote.',
+            'ip_limit' => 'You have exceeded the amount of votes allowed per IP',
         ],
         'ballot' => [
-            'ballot_validity' => 'La papereta no és vàlida. Segueix les instruccions que es mostren a cada pregunta.'
+            'ballot_validity' => 'The ballot selection is invalid. Follow the instructions on every question.',
+            'ballot_max' => 'You have selected more options than are allowed on this vote',
+            'ballot_min' => 'You must select at least one option on question ":question"|You must select at least :min_options options on question ":question"',
         ],
         'phone' => [
-            'phone_format' => 'El format del mòbil introduit no és correcte',
-            'phone_not_used' => 'El mòbil introduit ja ha emès un vot.'
+            'phone_format' => 'The phone number was entrered in an incorrect format',
+            'phone_not_used' => 'This phone number has already cast a vote.'
         ],
         'SMS_code' => [
-            'sms_code' => 'El codi SMS introduit no és correcte.'
+            'sms_code' => 'The SMS code entered is incorrect.'
         ]
     ],
 
@@ -125,11 +127,12 @@ return [
     */
 
     'attributes' => [
-        'SID' => 'L\'identificador',
-        'ballot' => 'La papereta',
-        'phone' => 'El teu número de mòbil',
-        'country_code' => 'Prefixe internacional',
-        'SMS_code' => 'El codi SMS'
+        'SID' => 'ID',
+        'ballot' => 'Ballot',
+        'phone' => 'Phone number',
+        'country_code' => 'International',
+        'SMS_code' => 'SMS code',
+        'reason' => 'Reason'
     ],
 
 ];

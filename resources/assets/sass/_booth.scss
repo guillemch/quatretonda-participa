@@ -1,159 +1,295 @@
 .ballot-box {
-    background: $gray-lighter;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+  background: $gray-lighter;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  @include border-radius(0.25rem);
 
-    h3 {
-        font-weight: bold;
-    }
+  h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
 
-    hr {
-        margin: 1rem 0;
-    }
+  hr {
+    margin: 1rem 0;
+  }
+}
+
+.ballot-phone {
+  @include border-radius(0 0 0.25rem 0.25rem);
 }
 
 .ballot-block {
-    max-width: 600px;
-    margin: 1rem auto;
-    border: 4px $brand-success solid;
-    padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+  border: 4px $brand-success solid;
+  padding: 2rem;
+  @include border-radius(0.25rem);
+
+  h3 {
+    margin: -2rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 2rem;
+    background: $brand-success;
+    color: #FFF;
+    font-size: 1.25rem;
+  }
+
+  &--error {
+    border: 4px $brand-danger solid;
 
     h3 {
-        margin: -2rem;
-        margin-bottom: 2rem;
-        padding: 0.5rem 2rem;
-        background: $brand-success;
-        color: #FFF;
-        font-size: 1.25rem;
+      background: $brand-danger;
     }
 
-    &--error {
-        border: 4px $brand-danger solid;
-
-        h3 {
-            background: $brand-danger;
-        }
-
-        .fa {
-            font-size: 4rem;
-            animation: thumbs-down 1s;
-            margin-bottom: 1rem;
-        }
+    .far {
+      font-size: 4rem;
+      animation: thumbs-down 1s;
+      margin-bottom: 1rem;
     }
+  }
 }
 
 .ballot-receipt {
-    .ballot {
-        &__edition .btn {
-            margin-top: -0.4rem;
-        }
-
-        &__ref {
-            text-align: center;
-            font-family: $font-family-monospace;
-            margin-bottom: 1rem;
-            border-bottom: 1px $gray-lighter solid;
-
-            img {
-                vertical-align: middle;
-            }
-        }
-
-        &__contents {
-            h4 {
-                color: $gray;
-                font-size: 1.25rem;
-            }
-        }
-
-        &__signature {
-            font-family: $font-family-monospace;
-            font-size: 0.75rem;
-            color: $gray-600;
-            word-break: break-all;
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 1px $gray-lighter solid;
-        }
-
-        &__points {
-            text-align: right;
-            color: $gray-600;
-            font-style: italic;
-        }
+  .ballot {
+    &__edition .btn {
+      margin-top: -0.4rem;
     }
+
+    &__ref {
+      text-align: center;
+      font-family: $font-family-monospace;
+      margin-bottom: 1rem;
+      border-bottom: 1px $gray-lighter solid;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+
+    &__contents {
+      h4 {
+        color: $gray;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+    }
+
+    &__signature {
+      font-family: $font-family-monospace;
+      font-size: 0.75rem;
+      color: $gray-600;
+      word-break: break-all;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      border-top: 1px $gray-lighter solid;
+    }
+
+    &__points {
+      text-align: right;
+      color: $gray-600;
+      font-style: italic;
+    }
+  }
 }
 
 .ballot-lookup {
-    &__input:focus {
-        box-shadow: 0 0 0 3px rgba($brand-primary, .25);
-    }
+  &__input:focus {
+    box-shadow: 0 0 0 3px rgba($brand-primary, .25);
+  }
 }
 
 .ballot-lookup-wrapper .ballot-lookup {
-    max-width: 600px;
-    margin: 2rem auto 0 auto;
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
 }
 
 .option-modal {
-    .modal-title {
-        color: $brand-primary;
+  .modal-title {
+    color: $brand-primary;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    color: $gray-600;
+    font-size: 1rem;
+    margin: 1rem -1rem 0.5rem -1rem;
+    padding: 1rem 1rem 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 1px $gray-lighter solid;
+  }
+
+  .option-cost {
+    font-size: 2rem;
+  }
+
+  .option-attachments {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
     }
+  }
 
-    h4 {
-        color: $gray;
-        font-size: 1.25rem;
-        margin-top: 1rem;
+  .option-pictures {
+    margin-top: 1rem;
+
+    img {
+      width: 100%;
+      margin: 0.25rem 0;
     }
-
-    .option-cost {
-        font-size: 2rem;
-    }
-
-    .option-attachments {
-        margin: 0;
-        padding: 0;
-
-        li {
-            list-style: none;
-        }
-    }
-
-    .option-pictures {
-        margin-top: 1rem;
-
-        img {
-            width: 100%;
-            margin: 0.25rem 0;
-        }
-    }
+  }
 }
 
-@include media-breakpoint-up(sm) {
-    .template-2column {
-        .list-group {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
+.template-cards {
+  .option {
+    display: flex;
+    margin-bottom: 0;
+  }
 
-        label {
-            width: 50%;
-            height: 240px;
-            align-items: flex-start;
-            overflow: hidden;
-        }
+  .option-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0.75rem 0;
+    padding: 1.25rem 1.25rem 3rem 1.25rem;
+    transition-timing-function: ease-out;
+    transition-duration: .15s;
+    transform: translateY(0);
+    box-shadow: $card-shadow;
+    border: 2px darken($gray-lighter, 10%) solid;
+    border-radius: 0.25rem;
+    overflow: hidden;
+
+    &:hover {
+      background: mix($brand-primary, $white, 15%);
+      transform: translateY(-4px);
+      box-shadow: $card-raised-shadow;
+      border-color: mix($brand-primary, $white, 75%);
+
+      .custom-control-label:before {
+        background: rgba(0, 0, 0, 0.1);
+      }
     }
 
-    .booth-mode .template-2column {
-        .list-group label {
-            width: 33.3%;
-        }
+    &:active {
+      background: mix($brand-primary, $white, 25%);
     }
+  }
+
+  .option.selected .option-wrapper {
+    background: $brand-primary;
+    color: #FFF;
+    box-shadow: $card-raised-shadow;
+    transform: translateY(-4px);
+    border-color: $brand-primary;
+
+    &:hover {
+      background: darken($brand-primary, 5%);
+      border-color: darken($brand-primary, 5%);
+    }
+
+    .option-cost, a {
+      color: #FFF;
+      opacity: 0.6;
+    }
+
+    .custom-control-label:before {
+      box-shadow: 0 0 0 1px #F1F2F3, 0 0 0 3px $brand-primary !important;
+    }
+  }
+
+  .option.disabled:hover .option-wrapper {
+    background: #FFF;
+    color: $gray-lightest;
+    box-shadow: $card-shadow;
+    transform: none;
+    border: 2px darken($gray-lighter, 10%) solid;
+  }
 }
 
+.template-2column,
+.template-simple {
+  .selected {
+    background: lighten($brand-primary, 50%);
+    box-shadow: inset -4px 0px 0px 0px $brand-primary;
+  }
+}
+
+.template-simple {
+  .custom-control {
+    margin-right: 5rem;
+  }
+}
 
 @include media-breakpoint-up(lg) {
-    .template-2column label {
-        height: 150px;
+  .ballot-box {
+  h3 {
+    font-size: 1.75rem;
+  }
+  }
+
+  .template-2column {
+    .list-group {
+      flex-direction: row;
+      flex-wrap: wrap;
     }
+
+    .list-group-item {
+      width: 50%;
+      height: 10rem;
+      align-items: flex-start;
+      overflow: hidden;
+      padding-bottom: 3rem;
+    }
+  }
+
+  .template-cards {
+    .option-group {
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+    .option {
+    height: 10rem;
+    width: 50%;
+
+    &:nth-child(even) {
+      padding-left: 0.75rem;
+    }
+
+    &:nth-child(odd) {
+      padding-right: 0.75rem;
+    }
+    }
+  }
+
+  .booth-mode .template-cards {
+  .option {
+    width: 33.333%;
+
+    &:nth-child(3n) {
+    padding-left: 0.75rem;
+    padding-right: 0;
+    }
+
+    &:nth-child(3n - 1) {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    }
+
+    &:nth-child(3n - 2) {
+    padding-left: 0;
+    padding-right: 0.75rem;
+    }
+  }
+  }
+
+  .booth-mode .template-2column {
+    .list-group-item {
+      width: 33.3%;
+    }
+  }
 }

@@ -13,10 +13,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Edition::class, function (Faker\Generator $faker) {
-    $start_date = date('Y-m-d H:i:s');
-    $start_date_unix = strtotime($start_date);
-    $end_date = strtotime('+20 days');
-    $end_date = date('Y-m-d H:i:s', $end_date);
+    $start_date = \Carbon\Carbon::today()->subWeeks(1);
+    $end_date = \Carbon\Carbon::today()->addWeeks(1);
 
     return [
         'name' => 'Test edition',

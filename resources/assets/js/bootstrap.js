@@ -31,15 +31,15 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let csrf_token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (csrf_token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrf_token.content;
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrf_token.content;
 } else {
-    console.error('CSRF or JWT token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+  console.error('CSRF or JWT token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 let jwt_token = document.head.querySelector('meta[name="jwt-token"]');
 
 if (jwt_token) {
-    window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwt_token.content;
+  window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwt_token.content;
 }
 
 /**
@@ -53,6 +53,6 @@ if (jwt_token) {
 // window.Pusher = require('pusher-js');
 
 // window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
+//   broadcaster: 'pusher',
+//   key: 'your-pusher-key'
 // });

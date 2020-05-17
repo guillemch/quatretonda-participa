@@ -25,7 +25,7 @@ class Voter extends Model
      */
     public function ballot()
     {
-        if(config('participa.anonymous_voting') === false) {
+        if (config('participa.anonymous_voting') === false) {
             return $this->hasOne('App\Ballot');
         }
 
@@ -37,7 +37,7 @@ class Voter extends Model
      */
     public static function findBySID($SID, $editionId)
     {
-        if(!$editionId) $editionId = Edition::current()->id;
+        if (!$editionId) $editionId = Edition::current()->id;
         return Self::where('SID', $SID)->where('edition_id', $editionId)->first();
     }
 
@@ -46,7 +46,7 @@ class Voter extends Model
      */
     public function smsAlreadySent($phone)
     {
-        return ($this->SMS_phone == $phone) ? array('time' => $this->SMS_time) : FALSE;
+        return ($this->SMS_phone === $phone) ? ['time' => $this->SMS_time] : false;
     }
 
     /**
@@ -55,9 +55,13 @@ class Voter extends Model
      */
     public function smsExceeded()
     {
-        if($this->SMS_attempts >= config('participa.sms_max_attempts')) {
-            $last_number = explode(".", $this->SMS_phone);
-            return array('last_country_code' => $last_number[0], 'last_number' => $last_number[1], 'time' => $this->SMS_time);
+        if ($this->SMS_attempts >= config('participa.sms_max_attempts')) {
+            $last_number = explode('.', $this->SMS_phone);
+            return [
+                'last_country_code' => $last_number[0],
+                'last_number' => $last_number[1],
+                'time' => $this->SMS_time
+            ];
         }
 
         return FALSE;
@@ -115,9 +119,9 @@ class Voter extends Model
     {
         $userId = ($request->user()) ? $request->user()->id : null;
 
-        if(!$userId) $this->SMS_verified = 1;
+        if (!$userId) $this->SMS_verified = 1;
         $this->ballot_cast = 1;
-        $this->ballot_time = date("Y-m-d H:i:s");
+        $this->ballot_time = date('Y-m-d H:i:s');
         $this->ip_address = $request->ip();
         $this->user_agent = $request->header('User-Agent');
         $this->signature = $this->createSignature();

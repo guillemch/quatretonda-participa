@@ -14,4 +14,5 @@
         ip: '{{ request()->ip() }}'
     }
 </script>
+<script src="{{ mix('js/admin.js') }}"></script>
 @endpush

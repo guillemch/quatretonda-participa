@@ -1,88 +1,127 @@
 <template>
-    <div :class="'question template-' + question.template">
-        <h2><i class="fa fa-check-square-o" aria-hidden="true"></i> {{ question.question }}</h2>
-        <p class="description">{{ question.description }}</p>
-        <div class="list-group">
-            <label v-for="option in question.options"
-                :class="{
-                    'list-group-item list-group-item-action': true,
-                    'disabled' : isDisabled(option),
-                    'selected' : isSelected(option)
-                }">
-                <ballot-option
-                    :type="questionType"
-                    :option="option"
-                    :selected="isSelected(option)"
-                    :disabled="isDisabled(option)"
-                    :display-cost="displayCost" />
-            </label>
-        </div>
-        <hr />
+  <section :class="'question template-' + question.template"
+    :aria-labelledby="'question-' + question.id"
+    role="group">
+    <div :class="{ 'heading': true, 'has-number': displayNumber }">
+      <span v-if="displayNumber" class="number">{{ number }}</span>
+      <h2 :id="'question-' + question.id">{{ question.question }}</h2>
+      <p class="description">{{ question.description }}</p>
     </div>
+    <ballot-cost-indicator :sum="sumCost" :out-of="question.max_options" :done-selecting="doneSelecting" />
+    <div
+      :class="{
+        'option-group': true,
+        'list-group': question.template != 'cards'
+      }">
+      <label
+        v-for="option in question.options"
+        :key="option.id"
+        :class="{
+          'option': true,
+          'list-group-item list-group-item-action': question.template !== 'cards',
+          'disabled' : isDisabled(option),
+          'selected' : isSelected(option)
+        }">
+        <ballot-option
+          :type="questionType"
+          :option="option"
+          :selected="isSelected(option)"
+          :context="selected[0].options"
+          :disabled="isDisabled(option)"
+          :display-cost="displayCost" />
+      </label>
+    </div>
+
+    <hr  aria-hidden="true" />
+  </section>
 </template>
 
 <script>
-    import BallotOption from './BallotOption';
+  import BallotOption from './BallotOption';
+  import BallotCostIndicator from './BallotCostIndicator';
 
-    export default {
-        name: 'ballot-question',
+  export default {
+    name: 'ballot-question',
 
-        components: {
-            BallotOption
-        },
+    components: {
+      BallotOption,
+      BallotCostIndicator
+    },
 
-        props: {
-            question: Object,
-            selected: Array
-        },
+    props: {
+      question: Object,
+      selected: Array,
+      number: Number,
+      displayNumber: Boolean
+    },
 
-        computed: {
-            questionType: function() {
-                return this.question.max_options == 1 ? 'radio' : 'checkbox';
-            },
-            displayCost: function() {
-                return this.question.display_cost == 1;
-            }
-        },
+    computed: {
+      questionType () {
+        return this.question.max_options === 1 ? 'radio' : 'checkbox';
+      },
+      displayCost () {
+        return this.question.display_cost === 1;
+      },
+      questionIndex () {
+        return this.selected.findIndex((q) => q.id === this.question.id);
+      },
+      sumCost () {
+        return this.selected[this.questionIndex].options.reduce((a, b) => a + b.cost, 0);
+      },
+      doneSelecting () {
+        const remainingOptions = this.question.options.filter(option => {
+          return this.selected[this.questionIndex].options.findIndex(o => o.id == option.id) === -1
+        })
+        
+        remainingOptions.sort((a, b) => a.cost - b.cost)
 
-        methods: {
-            isSelected(option) {
-                const questionIndex = this.selected.findIndex((q) => q.id == option.question_id);
-                return this.selected[questionIndex].options.filter((o) => o.id == option.id).length == 0 ? false : true;
-            },
+        return this.sumCost + remainingOptions[0].cost > this.question.max_options
+      }
+    },
 
-            isDisabled(option) {
-                // Limits are not applied to radio questions
-                if(this.question.max_options == 1) return false;
+    watch: {
+      doneSelecting (value) {
+        this.$emit('doneSelecting', this.question.id, value);
+      }
+    },
 
-                // Find if we're over the limit of allowed selections
-                const questionIndex = this.selected.findIndex((q) => q.id == option.question_id);
-                const overLimit = this.selected[questionIndex].options.length >= this.question.max_options ? true : false;
+    methods: {
+      isSelected (option) {
+        return this.selected[this.questionIndex].options.filter((o) => o.id === option.id).length === 0 ? false : true;
+      },
 
-                // If we're not over limit, no options are disabled
-                if(!overLimit) return false;
-
-                // We're over the limit. return TRUE if option is not in selected array.
-                return !this.isSelected(option);
-            }
-        }
-
+      isDisabled (option) {
+        if (!this.doneSelecting) return option.cost + this.sumCost > this.question.max_options && !this.isSelected(option);
+        return !this.isSelected(option);
+      }
     }
+
+  }
 </script>
 
 <style scoped lang="scss">
-    @import '../../../sass/_variables';
+  @import '../../../sass/_variables';
 
+  .question {
     h2 {
-        font-size: 1.65rem;
+      font-size: 1.65rem;
+      font-weight: 600;
     }
 
     .description {
-        color: $gray-light;
+      color: $gray-light;
     }
 
-    .selected {
-        background: lighten($teal, 45%);
-        box-shadow: inset -4px 0px 0px 0px $brand-primary;
+    .heading {
+      position: relative;
+
+      .number {
+        color: darken($gray-lighter, 20%);
+        font-size: 3rem;
+        position: absolute;
+        left: -50px;
+        top: -15px;
+      }
     }
+  }
 </style>

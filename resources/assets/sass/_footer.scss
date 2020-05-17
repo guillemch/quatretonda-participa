@@ -1,38 +1,62 @@
-.page-footer {
-    background: #00BAA3;
-    color: #FFF;
-    margin: -1rem;
-    padding: 1rem;
+.footer-background {
+  background-color: $brand-primary;
+  padding-top: 2rem;
+}
 
-    a {
-        color: #FFF;
-        opacity: 0.75;
-        word-break: break-word;
+.main-footer {
+  padding-bottom: 2rem;
+  color: $white;
 
-        &:hover {
-            opacity: 1;
-        }
-    }
+  a {
+    color: rgba($white, .75);
+  }
+
+  .languages {
+    background: $white;
+    margin-bottom: 2rem;
+  }
 }
 
 .council-details {
-    p:last-child {
-        margin-bottom: 0;
-    }
+  h3 {
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
 
-    span {
-        margin-right: 0.5rem;
-        white-space: nowrap;
-    }
+  p {
+    margin-bottom: 0.25rem;
+  }
+
+  span {
+    margin-right: 0.5rem;
+    white-space: nowrap;
+  }
+
+  a {
+    word-break: break-word;
+  }
+
+  .wai-logo {
+    margin-top: 1.5rem;
+  }
 }
 
 address {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 @include media-breakpoint-up(sm) {
-    .page-footer {
-        margin: -2rem;
-        padding: 2rem;
+  .main-footer {
+    display: flex;
+
+    .media {
+      order: 1;
+      margin-right: auto;
     }
+
+    .footer-language {
+      order: 2;
+      width: 11.25rem;
+    }
+  }
 }

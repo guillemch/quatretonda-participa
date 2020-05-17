@@ -10,8 +10,8 @@
     <div class="calendar">
         <div class="calendar__heading">@lang('participa.calendar_heading')</div>
         <div class="calendar__dates">
-            @if($startMonth != $endMonth)
-                <div class="row calendar__date-columns">
+            @if ($startMonth != $endMonth)
+                <div class="d-flex calendar__date-columns">
                     <div class="col">
                         <div class="calendar__days"><strong>{{ $startDay }}</strong></div>
                         <div class="calendar__month">

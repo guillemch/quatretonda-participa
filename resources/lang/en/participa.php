@@ -10,25 +10,29 @@ return [
     'locale' => 'en',
     'twitter_locale' => 'en',
     'facebook_locale' => 'en_GB',
-    'heading' => 'You have a say on the council\'s !',
-    'subheading' => 'The council of [city_name] t\'obri la possibilitat de participar activament en les decisions que més t\'afecten.',
-    'tweet' => '',
-    'description' => 'Tu decideixes les inversions de l\'Ajuntament. El Govern de [city_name] t\'obri la possibilitat de participar activament en les decisions que més t\'afecten. Junts volem millorar [city_name], i el teu vot compta!',
-    'keywords' => '[city_name], council, ayuntamiento, govern, obert, participacio ciutadana, democracia participativa, [city_name] participa, votació, votación, referendum',
+    'heading' => 'You have a say on the Council\'s decisions!',
+    'subheading' => 'The Town Council of Quatretonda lets you take an active part in the decisions that affect you the most.',
+    'tweet' => 'I have voted on which projects I want @EsQuatretonda to invest in',
+    'description' => 'You have a say on the Council\'s decisions. The City Council of Quatretonda lets you take an active part in the decisions that affect you the most.',
+    'keywords' => 'Quatretonda, council, ayuntamiento, govern, obert, participacio ciutadana, democracia participativa, Quatretonda participa, votació, votación, referendum',
 
     /*
     |--------------------------------------------------------------------------
     | Global
     |--------------------------------------------------------------------------
     */
+    'skip_to_content' => 'Skip to main content',
+    'select_language' => 'Selecciona idioma / Select your language',
+    'current_language' => 'Current language',
     'calendar_heading' => 'Poll',
-    'help' => 'Help and Support',
-    'is_archive' => 'This poll ended on <strong>:end_date</strong> and is archived. Go to the <a href="/">current poll</a> for information on the current vote.',
+    'help' => 'Help and support',
+    'is_archive' => 'The information shown below belongs to a poll that ended on <strong>:end_date</strong> and is archived. You may go to the <a href="/">latest poll</a> for information on the current vote.',
     'error' => 'Error',
     'vote' => 'Vote',
     'print' => 'Print',
     'close' => 'Close',
     'ordered_randomly' => 'Ordered randomly',
+    'SMS_notification' => 'Your code to vote is :code',
 
     /*
     |--------------------------------------------------------------------------
@@ -40,10 +44,10 @@ return [
     'sidebar_dates' => 'From :start_date to :end_date',
     'more_info' => 'More information',
     'propose_cta' => 'Submit your proposal',
-    'voting_places' => 'Polling stations',
-    'voting_text' => 'If you need assistance voting, you can go to one of the available assisted polling stations to vote in person.',
+    'voting_places' => 'In-person voting stations',
+    'voting_text' => 'If you need assistance voting, you may go to one of the following in-person assisted voting stations.',
     'contact' => 'Need help?',
-    'contact_text' => 'You can direct any questions to <a href="mailto::contact_email">:contact_email</a>.',
+    'contact_text' => 'You can reach us at <a href="mailto::contact_email">:contact_email</a> if you need further assitance.',
     'past_editions' => 'Past polls',
 
     /*
@@ -90,10 +94,24 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Errors
+    |--------------------------------------------------------------------------
+    */
+    'error_404' => 'Error 404',
+    'error_404_text' => 'The page you were looking for was not found.',
+    'error_503' => 'Maintenance tasks',
+    'error_503_text' => 'We are currently doing some maintenance on this website. Come back in a few minutes.',
+    'error_SMS' => 'Error sending the SMS',
+    'error_ip_limit_exceeded' => 'You have exceeded the amount of votes allowed per IP',
+    'error_lookup_limit_exceeded' => 'You have entered an incorrect ID too many times.',
+    'error_token_expired' => 'Your security token has expired. Refresh your browser and try again.',
+
+    /*
+    |--------------------------------------------------------------------------
     | Months
     |--------------------------------------------------------------------------
     */
-    'months_short' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Oct', 'Nov', 'Dec'],
-    'months_long' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'October', 'November', 'December'],
+    'months_short' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    'months_long' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 
 ];

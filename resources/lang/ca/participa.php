@@ -12,15 +12,18 @@ return [
     'facebook_locale' => 'ca_ES',
     'heading' => 'Tu decideixes en què inverteix l\'Ajuntament!',
     'subheading' => 'El Govern de Quatretonda t\'obri la possibilitat de participar activament en les decisions que més t\'afecten.',
-    'tweet' => 'He votat en què projectes vull que @ajQuatretonda invertisca',
+    'tweet' => 'He votat en què projectes vull que Quatretonda invertisca',
     'description' => 'Tu decideixes les inversions de l\'Ajuntament. El Govern de Quatretonda t\'obri la possibilitat de participar activament en les decisions que més t\'afecten. Junts volem millorar Quatretonda, i el teu vot compta!',
-    'keywords' => 'quatretonda, ajuntament, ayuntamiento, govern, obert, participacio ciutadana, democracia participativa, quatretonda participa, votació, votación, referendum',
+    'keywords' => 'Quatretonda, ajuntament, ayuntamiento, govern, obert, participacio ciutadana, democracia participativa, Quatretonda participa, votació, votación, referendum',
 
     /*
     |--------------------------------------------------------------------------
     | Global
     |--------------------------------------------------------------------------
     */
+    'skip_to_content' => 'Ves directament al contingut',
+    'select_language' => 'Selecciona idioma / Select your language',
+    'current_language' => 'Idioma actual',
     'calendar_heading' => 'Votació',
     'help' => 'Incidències i ajuda',
     'is_archive' => 'Aquesta votació va finalitzar el <strong>:end_date</strong> i està arxivada. Ves a l\'<a href="/">edició actual</a> per a consultar la votació en curs.',
@@ -28,7 +31,8 @@ return [
     'vote' => 'Vota',
     'print' => 'Imprimeix',
     'close' => 'Tanca',
-    'ordered_randomly' => 'Ordenades alteatòriament',
+    'ordered_randomly' => 'Ordenades aleatòriament',
+    'SMS_notification' => 'El teu codi per a votar és :code',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,15 +99,19 @@ return [
     */
     'error_404' => 'Error 404',
     'error_404_text' => 'No hem trobat la pàgina que estaves buscant.',
-    'ip_limit_exceeded' => 'Has sobrepassat el límit de vots que una mateixa IP pot emetre',
-    'lookup_limit_exceeded' => 'Has introduit un Identificador erroni massa vegades',
+    'error_503' => 'Tasques de manteniment',
+    'error_503_text' => 'Estem realitzant tasques de manteniment. Torna en uns minuts.',
+    'error_SMS' => 'Error enviant l\'SMS',
+    'error_ip_limit_exceeded' => 'Has sobrepassat el límit de vots que una mateixa IP pot emetre',
+    'error_lookup_limit_exceeded' => 'Has introduit un Identificador erroni massa vegades',
+    'error_token_expired' => 'El token de seguretat ha caducat. Refresca la pàgina i torna a intentar-ho.',
 
     /*
     |--------------------------------------------------------------------------
     | Months
     |--------------------------------------------------------------------------
     */
-    'months_short' => ['Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Oct', 'Set', 'Nov', 'Des'],
+    'months_short' => ['Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Set', 'Nov', 'Des'],
     'months_long' => ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol', 'agost', 'setembre', 'octubre', 'novembre', 'desembre'],
 
 ];

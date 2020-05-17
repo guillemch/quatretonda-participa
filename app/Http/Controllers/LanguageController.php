@@ -11,9 +11,14 @@ class LanguageController extends Controller
      *
      * @return Redirect back
      */
-    public function switchLanguage($language)
+    public function switchLanguage(Request $request, $language)
     {
         $cookie = cookie()->forever('language', $language);
-        return back()->withCookie($cookie);
+
+        if (!is_null($request->input('home'))) {
+            return redirect('/')->withCookie($cookie);
+        } else {
+            return back()->withCookie($cookie);
+        }
     }
 }

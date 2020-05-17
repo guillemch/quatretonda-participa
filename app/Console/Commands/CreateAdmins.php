@@ -42,10 +42,10 @@ class CreateAdmins extends Command
         $superadmin = $this->option('superadmin');
         $table = [];
 
-        foreach($users as $user){
+        foreach ($users as $user){
 
             // Check if user exists
-            if(User::where('username', $user)->count()) {
+            if (User::where('username', $user)->count()) {
                 $this->error('User \'' . $user . '\' could not be created: Username duplicate.');
                 continue;
             }

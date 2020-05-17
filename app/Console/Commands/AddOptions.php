@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use App\Option;
 
 class AddOptions extends Command
@@ -40,10 +41,10 @@ class AddOptions extends Command
     {
         $questionId = $this->option('question');
 
-        if(!$questionId) {
+        if (!$questionId) {
             $createQuestion = $this->choice('The question ID was not specified. Create one?', ['Yes', 'No'], 0);
 
-            if($createQuestion == 'Yes') {
+            if ($createQuestion == 'Yes') {
                 $this->call('edition:questions');
                 $this->handle();
             } else {
@@ -55,10 +56,10 @@ class AddOptions extends Command
 
         $option->question_id = $questionId;
         $option->option = $this->ask('Option');
-        $option->salt = str_random(12);
+        $option->salt = Str::random(12);
         $option->save();
 
         $addOption = $this->choice('Add another option?', ['Yes', 'No'], 0);
-        if($addOption == 'Yes') $this->handle();
+        if ($addOption === 'Yes') $this->handle();
     }
 }

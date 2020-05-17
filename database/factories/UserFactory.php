@@ -17,6 +17,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'username' => $faker->unique()->userName,
+        'email' => $faker->unique()->email,
         'password' => $password ?: $password = bcrypt('secret'),
         'is_superadmin' => 1,
         'remember_token' => str_random(10),

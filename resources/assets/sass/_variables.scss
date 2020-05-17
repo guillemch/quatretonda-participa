@@ -1,23 +1,18 @@
 // Variables
 
-
 // Colors
-//
-// Grayscale and brand colors for use across Bootstrap.
-
-// Start with assigning color names to specific hex values.
 $white:  #fff;
 $black:  #000;
 $red:    #e74c3c;
 $orange: #e67e22;
 $yellow: #f1c40f;
 $green:  #2ecc71;
-$blue:   #9E0057;
-$teal:   #00E2C4;
+$blue:   #00BAA2;
+$teal:   #00BAA2;
 $pink:   #ff5b77;
-$purple: #613d7c;
+$purple: #7A52BD;
 
-// Create grayscale
+// Grayscale
 $gray-dark:                 #292b2c;
 $gray:                      #464a4c;
 $gray-light:                #636c72;
@@ -25,19 +20,20 @@ $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             #9E0057;
+$brand-primary:             $teal;
 $brand-success:             $green;
 $brand-info:                $teal;
 $brand-warning:             $orange;
 $brand-danger:              $red;
 $brand-inverse:             $gray-dark;
+$brand-primary-gradient:    #9E0057;
 
 
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-rounded:            false;
+$enable-rounded:            true;
 $enable-shadows:            false;
 $enable-gradients:          false;
 $enable-transitions:        true;
@@ -49,7 +45,7 @@ $enable-print-styles:       true;
 //
 // Settings for the `<body>` element.
 
-$body-bg:       #F1F2F3;
+$body-bg:       $gray-lightest;
 $body-color:    $gray-dark;
 $inverse-bg:    $gray-dark;
 $inverse-color: $gray-lighter;
@@ -59,7 +55,7 @@ $inverse-color: $gray-lighter;
 //
 // Style anchor elements.
 
-$link-color:            $brand-primary;
+$link-color:            #9E0057;
 $link-decoration:       none;
 $link-hover-color:      darken($link-color, 15%);
 $link-hover-decoration: underline;
@@ -69,7 +65,14 @@ $link-hover-decoration: underline;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: Interface, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:       $font-family-sans-serif;
+
+// Shadows for self-raising cards
+$box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+$box-raised-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+
+$card-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+$card-raised-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);

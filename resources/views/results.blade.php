@@ -3,10 +3,10 @@
 @section('content')
 <div class="row results-page">
     <div class="col-md-8">
-        <h2><i class="fa fa-bar-chart" aria-hidden="true"></i> @lang('participa.results')</h2>
+        <h2><i class="far fa-chart-bar" aria-hidden="true"></i> @lang('participa.results')</h2>
 
         <table class="census table table-bordered">
-            @if(config('participa.display_census_number'))
+            @if (config('participa.display_census_number'))
                 <colgroup>
                     <col width="25%" />
                     <col width="25%" />
@@ -21,14 +21,14 @@
             @endif
             <tbody>
                 <tr>
-                    @if(config('participa.display_census_number'))
+                    @if (config('participa.display_census_number'))
                         <th class="text-right">@lang('participa.census')</th>
                         <td>{{ number($census, 0) }}</td>
                     @endif
                     <th class="text-right">@lang('participa.turnout')</th>
                     <td>
                         {{ number($turnout, 0) }}
-                        @if(config('participa.display_census_number'))
+                        @if (config('participa.display_census_number'))
                             <span class="results__points">{{ number(($turnout * 100 / $census), 2) . '%' }}</span>
                         @endif
                     </td>
@@ -36,7 +36,7 @@
             </tbody>
         </table>
 
-        @foreach($results as $block)
+        @foreach ($results as $block)
             @php
                 $classes = [
                     1 => 'col-sm-12',
@@ -52,11 +52,11 @@
             <div class="results">
                 <h3>{{ $block['question'] }}</h3>
 
-                @if($resultsToHighlight > 0)
+                @if ($resultsToHighlight > 0)
                     <h4 class="results__section results__section--top">{{ trans_choice('participa.top_results', $resultsToHighlight, ['num' => $resultsToHighlight]) }}</h4>
 
                     <div class="row">
-                        @foreach($topResults->all() as $option)
+                        @foreach ($topResults->all() as $option)
                             @php
                                 $pos++;
                             @endphp
@@ -79,12 +79,12 @@
                         @endforeach
                     </div>
 
-                    @if(count($results->all()) > 0)
+                    @if (count($results->all()) > 0)
                         <h4 class="results__section results__section--other">@lang('participa.other_results')</h4>
                     @endif
                 @endif
 
-                @if(count($results->all()) > 0)
+                @if (count($results->all()) > 0)
                     <table class="table table-bordered">
                         <colgroup>
                             <col width="40" />
@@ -94,7 +94,7 @@
                         </colgroup>
 
                         <tbody>
-                            @foreach($results->all() as $option)
+                            @foreach ($results->all() as $option)
                                 @php
                                     $pos++;
                                 @endphp
@@ -154,7 +154,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#optionModal').on('show.bs.modal', function (e) {
                 var option_id = e.relatedTarget.dataset.optionId,
                     option_title = e.relatedTarget.dataset.optionTitle;

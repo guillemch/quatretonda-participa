@@ -43,12 +43,12 @@ class ImportCensus extends Command
         $editionId = $this->option('edition');
         $edition = ($editionId) ? Edition::where('id', $editionId)->first() : Edition::current();
 
-        if(!$edition) {
+        if (!$edition) {
             $this->error('You must first create an edition.');
 
             $proceed = $this->choice('Create new one?', ['Yes', 'No'], 0);
 
-            if($proceed == 'Yes') {
+            if ($proceed == 'Yes') {
                 $this->call('edition:new');
                 $this->handle();
             } else {
@@ -63,8 +63,8 @@ class ImportCensus extends Command
 
         $lines = explode("\n", $contents);
 
-        foreach($lines as $SID) {
-            if(empty($SID)) continue;
+        foreach ($lines as $SID) {
+            if (empty($SID)) continue;
             $voter = new Voter;
             $voter->SID = $this->cleanSID($SID);
             $voter->edition_id = $edition->id;

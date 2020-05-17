@@ -18,11 +18,11 @@ class VoteOpen
     {
         $edition = Edition::current();
 
-        if(!$edition->count()) {
+        if (!$edition->count()) {
             return abort(503, 'You must first create an edition');
         }
 
-        if(!$edition->isOpen()) {
+        if (!$edition->isOpen()) {
             return redirect('/');
         }
 

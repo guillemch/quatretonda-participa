@@ -1,88 +1,153 @@
 /* Sidebar specific variables */
 $sidebar-background: $gray-lighter;
 $sidebar-text: $gray-light;
-$sidebar-text-secondary: lighten($sidebar-text, 15%);
 
 .sidebar {
-    &__box {
-        background: $sidebar-background;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
+  position: relative;
 
-        h3 {
-            font-size: 1.45rem;
-            font-weight: bold;
-        }
+  &__box {
+    position: relative;
+    background: $sidebar-background;
+    padding: 1.85rem 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    @include border-radius(0.25rem);
+    overflow: hidden;
 
-        h4 {
-            font-size: 1.15rem;
-            color: $sidebar-text;
-        }
-
-        hr {
-            margin: 1rem 0;
-        }
-
-        a {
-            word-break: break-word;
-        }
+    h3 {
+      font-size: 0.95rem;
+      color: $sidebar-text;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    &__box--main {
-        position: relative;
-
-        &:before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 1rem;
-            border-top: 1rem transparent solid;
-            border-left: 1rem transparent solid;
-            border-bottom: 1rem transparent solid;
-            border-right: 1rem $sidebar-background solid;
-        }
+    h4 {
+      font-size: 1.55rem;
+      font-weight: bold;
     }
 
-    &__propose {
-        margin: 1rem -1.5rem -1.5rem -1.5rem;
+    hr {
+      margin: 1rem 0;
     }
 
-    &__secondary {
-        color: $sidebar-text-secondary;
-        font-size: 0.80rem;
-        display: block;
+    a {
+      word-break: break-word;
     }
 
-    &__list {
-        padding-left: 0;
-        margin-bottom: 0;
-
-        li {
-            list-style: none;
-            margin-bottom: 0.5rem;
-        }
-
-        li:last-child {
-            margin-bottom: 0;
-        }
-
-        &__item {
-        	display: flex;
-        }
-
-        .fa {
-            margin-right: 0.5rem;
-        }
+    .btn-lg {
+      @include border-radius(0 0 0.25rem 0.25rem);
     }
 
-    p:last-child {
-        margin-bottom: 0;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 0.35rem;
+      background: $sidebar-text;
     }
+
+    &--main {
+      position: relative;
+      border-top: 0;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 0.35rem;
+        background: $brand-primary;
+        background: $brand-primary-gradient;
+      }
+    }
+  }
+
+  &__propose {
+    margin: 1rem -1.5rem -1.5rem -1.5rem;
+
+    a.btn {
+      text-align: left;
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
+      background: mix($brand-primary, $white, 25%);
+      border: 0;
+      color: darken($brand-primary, 10%);
+      font-weight: bold;
+
+      &:hover {
+        background: lighten($green, 35%);
+        color: darken($green, 10%);
+      }
+
+      .far {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &__secondary {
+    color: $sidebar-text;
+    font-size: 0.80rem;
+    display: block;
+  }
+
+  &__list {
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 0.5rem;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    &__item {
+    	display: flex;
+    }
+
+    .far {
+      margin-right: 0.5rem;
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    a {
+      display: flex;
+
+      &:hover {
+        text-decoration: none;
+
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 1.25rem;
+    border-top: 1rem transparent solid;
+    border-left: 1rem transparent solid;
+    border-bottom: 1rem transparent solid;
+    border-right: 1rem $sidebar-background solid;
+  }
 }
 
 
 @include media-breakpoint-down(sm) {
-    .sidebar__box--main:before {
-        display: none;
-    }
+  .sidebar:after {
+    display: none;
+  }
 }

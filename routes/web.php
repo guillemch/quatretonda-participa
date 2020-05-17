@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\URL;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +32,8 @@ Route::get('/ballot/{ballotRef}', 'BallotController@ballot');
 
 /* Admin */
 Route::get('/admin', 'AdminController@index')->middleware('auth');
+
+/* Force SSL */
+if (env('APP_ENV') === 'production') {
+    URL::forceScheme('https');
+}

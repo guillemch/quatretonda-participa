@@ -1,0 +1,68 @@
+.languages {
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  &__current {
+    list-style: none;
+    border: 1px $gray-400 solid;
+    min-width: 8.75rem;
+    @include border-radius(0.25rem);
+
+    & > a {
+      display: block;
+      padding: 0.25rem 1rem;
+
+      .fa {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+      }
+    }
+
+    &:hover .languages__menu,
+    &:focus-within .languages__menu {
+      display: block;
+    }
+
+    &:hover,
+    &:focus-within {
+      background: $gray-light;
+      border: 1px $gray-light solid;
+      @include border-radius(0.25rem 0.25rem 0 0);
+
+      a {
+        text-decoration: none;
+        color: #FFF;
+      }
+    }
+  }
+
+  &__menu {
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    background: $gray-light;
+    @include border-radius(0 0 0.25rem 0.25rem);
+    overflow: hidden;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      color: #FFF;
+      padding: 0.25rem 1rem;
+      border-top: 1px $gray-600 solid;
+
+      &:hover {
+        background: $gray-600;
+      }
+    }
+  }
+}

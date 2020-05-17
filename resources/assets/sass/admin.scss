@@ -3,34 +3,41 @@
 
 /* Login */
 .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-    .card {
-        width: 400px;
+  .card {
+    width: 400px;
+  }
+
+  &__logo {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    img {
+      max-width: 100%;
     }
+  }
 
-    &__logo {
-        text-align: center;
-        margin-bottom: 1rem;
+  .form-group:last-child {
+    margin-bottom: 0;
+  }
 
-        img {
-            max-width: 100%;
-        }
-    }
+  .input-group-addon {
+    width: 3rem;
+    text-align: center;
+  }
+}
 
-    .form-group:last-child {
-        margin-bottom: 0;
-    }
-
-    .input-group-addon {
-        width: 3rem;
-        text-align: center;
-    }
+/* Dashboard */
+.dashboard {
+  h1 {
+    font-weight: bold;
+  }
 }

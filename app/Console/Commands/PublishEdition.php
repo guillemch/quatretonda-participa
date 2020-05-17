@@ -40,7 +40,7 @@ class PublishEdition extends Command
     {
         $edition = Edition::where('published', 0)->first();
 
-        if(!$edition) {
+        if (!$edition) {
             $this->error('No unpublished editions were found');
             return;
         }

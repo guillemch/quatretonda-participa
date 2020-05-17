@@ -101,19 +101,21 @@ return [
 
     'custom' => [
         'SID' => [
-            'on_census' => 'No hem trobat al cens l\'identificador introduit',
-            'has_not_voted'=> 'L\'identificador introduit ja ha emès un vot.',
-            'ip_limit' => 'Has sobrepassat el número de vots que una mateixa IP pot emetre',
+            'on_census' => 'No hemos encontrado en el censo el identificador introducido',
+            'has_not_voted'=> 'El identificador introducidot ya ha emitido un voto.',
+            'ip_limit' => 'Has sobrepasado el número de votos que una misma IP puede emitir.',
         ],
         'ballot' => [
-            'ballot_validity' => 'La papereta no és vàlida. Segueix les instruccions que es mostren a cada pregunta.'
+            'ballot_validity' => 'La papeleta no es valida. Sigue las instrucciones que se muestran en cada pregunta.',
+            'ballot_max' => 'Has seleccionado más opciones de las que se permiten.',
+            'ballot_min' => 'Has de seleccionar al menos una opción en la pregunta ":question"|Has de seleccionar al menos :min_options opciones en la pregunta ":question"',
         ],
         'phone' => [
-            'phone_format' => 'El format del mòbil introduit no és correcte',
-            'phone_not_used' => 'El mòbil introduit ja ha emès un vot.'
+            'phone_format' => 'El formato del móvil introducido no es correcto',
+            'phone_not_used' => 'El móvil introducido ya ha emitido un voto.'
         ],
         'SMS_code' => [
-            'sms_code' => 'El codi SMS introduit no és correcte.'
+            'sms_code' => 'El código SMS introducido no es correcto.'
         ]
     ],
 
@@ -129,11 +131,12 @@ return [
     */
 
     'attributes' => [
-        'SID' => 'L\'identificador',
-        'ballot' => 'La papereta',
-        'phone' => 'El teu número de mòbil',
-        'country_code' => 'Prefixe internacional',
-        'SMS_code' => 'El codi SMS'
+        'SID' => 'El identificador',
+        'ballot' => 'El campo papereta',
+        'phone' => 'Tu número de móvil',
+        'country_code' => 'El prefijo internacional',
+        'SMS_code' => 'El código SMS',
+        'reason' => 'El campo justificación'
     ],
 
 ];

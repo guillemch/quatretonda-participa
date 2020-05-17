@@ -31,7 +31,7 @@ class VerifySMS extends Notification
         $phone = str_replace(".","",$notifiable->SMS_phone);
         return (new MessagebirdMessage)
                     ->setRecipients($phone)
-                    ->setBody("El teu codi de votació és {$notifiable->SMS_token}");
+                    ->setBody(__('participa.SMS_notification', ['code' => $notifiable->SMS_token]));
     }
 
 }

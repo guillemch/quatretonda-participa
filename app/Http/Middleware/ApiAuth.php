@@ -21,11 +21,11 @@ class ApiAuth
                 return response()->json(['user_not_found'], 404);
             }
         } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
-            return response()->json(['token_expired'], $e->getStatusCode());
+            return response()->json(['token_expired' => __('participa.error_token_expired')], $e->getStatusCode());
         } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
-            return response()->json(['token_invalid'], $e->getStatusCode());
+            return response()->json(['token_invalid' => __('participa.error_token_expired')], $e->getStatusCode());
         } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
-            return response()->json(['token_absent'], $e->getStatusCode());
+            return response()->json(['token_absent' => __('participa.error_token_expired')], $e->getStatusCode());
         }
 
         return $next($request);

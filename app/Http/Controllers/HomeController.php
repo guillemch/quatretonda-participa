@@ -40,33 +40,48 @@ class HomeController extends Controller
         $pastEditions = Edition::pastEditions();
         $forceOpen = $request->get('force_open');
 
+        if (!$edition) {
+            $message = 'Create your first edition by running
+                <pre>php artisan edition:new</pre>
+                or create a fake one to test: <pre>php artisan db:seed</pre>';
+
+            return view('errors.503', compact('message'));
+        }
+
         // If within voting window dates, show voting booth
-        if($edition->isOpen() || $forceOpen){
+        if ($edition->isOpen() || $forceOpen) {
             $user = $request->user();
             $inPerson = ($user) ? true : false;
             $token = ($inPerson) ? JWTAuth::fromUser($user) : null;
-            return view('booth', compact('edition', 'token', 'inPerson', 'pastEditions'));
+            $loadingTemplate = (count($edition->questions))
+                ? $edition->questions[0]->template
+                : 'cards';
+            return view('booth', compact(
+                'edition', 'token', 'inPerson', 'pastEditions', 'loadingTemplate'
+            ));
         }
 
         // If in limbo (after end_date and before publish_results), show placeholder
-        if($edition->isAwaitingResults()){
+        if ($edition->isAwaitingResults()) {
             return view('placeholder', compact('edition', 'pastEditions'));
         }
 
         // If after end_date AND publish_results, show results
-        if($edition->resultsPublished()){
+        if ($edition->resultsPublished()) {
             $results = $edition->fullResults();
             $turnout = $edition->turnout()->count();
             $census = $edition->voters()->count();
 
-            return view('results', compact('edition', 'results', 'turnout', 'census', 'pastEditions'));
+            return view('results', compact(
+                'edition', 'results', 'turnout', 'census', 'pastEditions'
+            ));
         }
 
         // If none of the previous conditions are met
         // display the About page as a placeholder before the vote.
-        $options = view('components.options', compact('edition'));
+        $page = $edition->buildAboutPage();
 
-        return view('about', compact('edition', 'pastEditions', 'options'));
+        return view('about', compact('edition', 'pastEditions', 'page'));
 
     }
 
@@ -79,9 +94,9 @@ class HomeController extends Controller
     {
         $edition = $this->edition;
         $pastEditions = Edition::pastEditions();
-        $options = view('components.options', compact('edition'));
+        $page = $edition->buildAboutPage();
 
-        return view('about', compact('edition', 'pastEditions', 'options'));
+        return view('about', compact('edition', 'pastEditions', 'page'));
     }
 
     /**
@@ -117,8 +132,8 @@ class HomeController extends Controller
      */
     public function option(Option $option)
     {
-        if($option->attachments) $option->attachments = explode("\n", $option->attachments);
-        if($option->pictures) $option->pictures = explode("\n", $option->pictures);
+        if ($option->attachments) $option->attachments = explode("\n", $option->attachments);
+        if ($option->pictures) $option->pictures = explode("\n", $option->pictures);
 
         return view('components.option', compact('option'));
     }
@@ -131,7 +146,7 @@ class HomeController extends Controller
      */
     public function myIpAddress(Request $request)
     {
-        $ip = $request->ip();
+        $ip = \App\Limit::ip();
 
         return view('ip_address')->withIp($ip);
     }

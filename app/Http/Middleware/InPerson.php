@@ -16,9 +16,18 @@ class InPerson
      */
     public function handle($request, Closure $next)
     {
-        if(JWTAuth::getToken()){
-            JWTAuth::parseToken()->authenticate();
+        try {
+            if (JWTAuth::getToken()){
+                JWTAuth::parseToken()->authenticate();
+            }
+        } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
+            return response()->json(['token_expired' => __('participa.error_token_expired')], $e->getStatusCode());
+        } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+            return response()->json(['token_expired' => __('participa.error_token_expired')], $e->getStatusCode());
+        } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
+            return response()->json(['token_expired' => __('participa.error_token_expired')], $e->getStatusCode());
         }
+
         return $next($request);
     }
 }

@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://quatretondaparticipa.com'),
+    'url' => env('APP_URL', 'https://wildcardparticipa.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -175,16 +175,12 @@ return [
          * Package Service Providers...
          */
         NotificationChannels\Messagebird\MessagebirdServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
-        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
-        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
-        App\Providers\VoteServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
@@ -215,21 +211,16 @@ return [
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
         'DB' => Illuminate\Support\Facades\DB::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
-        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
-        'Messagebird' => Bjrnblm\Messagebird\Facades\Messagebird::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
-        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,
@@ -237,12 +228,17 @@ return [
         'Response' => Illuminate\Support\Facades\Response::class,
         'Route' => Illuminate\Support\Facades\Route::class,
         'Schema' => Illuminate\Support\Facades\Schema::class,
-        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Messagebird' => Bjrnblm\Messagebird\Facades\Messagebird::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
 
     ],
 

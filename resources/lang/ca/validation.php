@@ -106,7 +106,9 @@ return [
             'ip_limit' => 'Has sobrepassat el número de vots que una mateixa IP pot emetre',
         ],
         'ballot' => [
-            'ballot_validity' => 'La papereta no és vàlida. Segueix les instruccions que es mostren a cada pregunta.'
+            'ballot_validity' => 'La papereta no és vàlida. Segueix les instruccions que es mostren a cada pregunta.',
+            'ballot_max' => 'Has seleccionat més opcions de les que es permeten.',
+            'ballot_min' => 'Has de seleccionar al menys una opció en la pregunta ":question"|Has de seleccionar com a mínim :min_options opcions en la pregunta ":question"',
         ],
         'phone' => [
             'phone_format' => 'El format del mòbil introduit no és correcte',
@@ -130,10 +132,11 @@ return [
 
     'attributes' => [
         'SID' => 'L\'identificador',
-        'ballot' => 'La papereta',
+        'ballot' => 'El camp papereta',
         'phone' => 'El teu número de mòbil',
-        'country_code' => 'Prefixe internacional',
-        'SMS_code' => 'El codi SMS'
+        'country_code' => 'El prefix internacional',
+        'SMS_code' => 'El codi SMS',
+        'reason' => 'El camp justificació'
     ],
 
 ];

@@ -73,7 +73,7 @@ class CacheResults extends Command
         $dontSave = $this->option('no-save');
         $this->edition = ($editionId) ? Edition::where('id', $editionId)->first() : Edition::current();
 
-        if(!$this->edition) {
+        if (!$this->edition) {
             $this->error('No active edition was found');
             return;
         }
@@ -84,23 +84,23 @@ class CacheResults extends Command
         $this->line('');
         $this->line('');
 
-        if(!$dontSave) $this->save();
+        if (!$dontSave) $this->save();
 
-        if(!$this->errors) {
+        if (!$this->errors) {
             $this->info('Ballot check finished without errors.');
-            if(!$dontSave) $this->line('Results cached successfully.');
+            if (!$dontSave) $this->line('Results cached successfully.');
         } else {
             $this->error('Ballot check finisheded with errors. The following ballots are invalid!');
 
             $this->table(['Cast at', 'Ballot ref.'], $this->errors);
         }
 
-        if(!$dontSave){
+        if (!$dontSave){
             Cache::forever('last_tally_finished' . $this->edition->id, time());
             Cache::forever('last_tally_integrity' . $this->edition->id, $this->integrity);
 
             $publishDate = strtotime($this->edition->publish_results);
-            if(time() > $publishDate) {
+            if (time() > $publishDate) {
                 Cache::forever('final_tally_finished_' . $this->edition->id, 'true');
             }
         }
@@ -115,14 +115,14 @@ class CacheResults extends Command
     {
         $validBallots = 0;
         $bar = $this->output->createProgressBar(count($ballots));
-        foreach($ballots as $ballot) {
-            if(!$ballot->check() || !$decodedBallot = $ballot->decrypt()) {
+        foreach ($ballots as $ballot) {
+            if (!$ballot->check() || !$decodedBallot = $ballot->decrypt()) {
                 $this->errors[] = [$ballot->cast_at, $ballot->ref];
                 continue;
             }
 
-            foreach($decodedBallot as $question => $options) {
-                foreach($options as $option => $points) {
+            foreach ($decodedBallot as $question => $options) {
+                foreach ($options as $option => $points) {
                     $this->tab[$question][$option] = (isset($this->tab[$question][$option])) ? $this->tab[$question][$option] + $points : $points;
                 }
             }
@@ -143,7 +143,7 @@ class CacheResults extends Command
         $this->info('Ballots: ' . $validBallots);
         $this->info('----------------------------');
 
-        if($validBallots != $voters) {
+        if ($validBallots !== $voters) {
             $this->integrity = false;
             $this->error('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
             $this->error('@@         Result integrity check failed        @@');
@@ -158,8 +158,8 @@ class CacheResults extends Command
      */
     private function save()
     {
-        foreach($this->tab as $question => $options) {
-            foreach($options as $option => $votes) {
+        foreach ($this->tab as $question => $options) {
+            foreach ($options as $option => $votes) {
                 Result::updateOrCreate(
                     ['edition_id' => $this->edition->id, 'question_id' => $question, 'option_id' => $option],
                     ['points' => number_format($votes, 3)]

@@ -66,7 +66,7 @@ class AddQuestions extends Command
         $this->createOptions($question->id);
 
         $addQuestion = $this->choice('Add another question?', ['Yes', 'No'], 0);
-        if($addQuestion == 'Yes') $this->handle();
+        if ($addQuestion == 'Yes') $this->handle();
     }
 
     private function setEdition()
@@ -74,12 +74,12 @@ class AddQuestions extends Command
         $editionId = $this->option('edition');
         $this->edition = ($editionId) ? Edition::where('id', $editionId)->first() : Edition::current();
 
-        if(!$this->edition) {
+        if (!$this->edition) {
             $this->error('Edition not found.');
 
             $proceed = $this->choice('Create new one?', ['Yes', 'No'], 0);
 
-            if($proceed == 'Yes') {
+            if ($proceed == 'Yes') {
                 $this->call('edition:new');
                 $this->handle();
             } else {
