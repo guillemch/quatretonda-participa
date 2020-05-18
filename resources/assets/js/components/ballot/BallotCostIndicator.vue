@@ -50,7 +50,7 @@
 
   .progress-holder {
     position: sticky;
-    top: 50px;
+    top: 45px;
     z-index: 1000;
     background: $white;
     padding: 1rem 0;

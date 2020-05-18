@@ -71,11 +71,12 @@
       doneSelecting () {
         const remainingOptions = this.question.options.filter(option => {
           return this.selected[this.questionIndex].options.findIndex(o => o.id == option.id) === -1
-        })
-        
-        remainingOptions.sort((a, b) => a.cost - b.cost)
+        });
 
-        return this.sumCost + remainingOptions[0].cost > this.question.max_options
+        if (!remainingOptions.length) return true;
+
+        remainingOptions.sort((a, b) => a.cost - b.cost);
+        return (this.sumCost + remainingOptions[0].cost) > this.question.max_options;
       }
     },
 
@@ -87,7 +88,7 @@
 
     methods: {
       isSelected (option) {
-        return this.selected[this.questionIndex].options.filter((o) => o.id === option.id).length === 0 ? false : true;
+        return this.selected[this.questionIndex].options.findIndex((o) => o.id === option.id) === -1 ? false : true;
       },
 
       isDisabled (option) {
