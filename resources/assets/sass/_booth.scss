@@ -103,6 +103,7 @@
   margin: 2rem auto 0 auto;
 }
 
+#optionModal,
 .option-modal {
   .modal-title {
     color: $brand-primary;
@@ -142,6 +143,10 @@
       margin: 0.25rem 0;
     }
   }
+}
+
+.modal-backdrop {
+  opacity: .5;
 }
 
 .template-cards {
