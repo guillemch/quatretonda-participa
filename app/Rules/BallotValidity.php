@@ -61,7 +61,8 @@ class BallotValidity implements Rule
 
             /* If a question has more or fewer answers than allowed,
                inform the user via a more specific error message */
-            if (count($ballotQuestion['options']) > $question->max_options) {
+            $options = collect($ballotQuestion['options']);
+            if ($options->sum('cost') > $question->max_options) {
                 $this->errorMessage = __('validation.custom.ballot.ballot_max');
                 return false;
             }
