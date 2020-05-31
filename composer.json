@@ -12,8 +12,7 @@
         "laravel/ui": "^2.0",
         "sentry/sentry-laravel": "^1.7.1",
         "simplesoftwareio/simple-qrcode": "^1.5",
-        "symfony/polyfill-iconv": "^1.5",
-        "tymon/jwt-auth": "1.0.*"
+        "symfony/polyfill-iconv": "^1.5"
     },
     "require-dev": {
         "laravel/dusk": "^6.1",

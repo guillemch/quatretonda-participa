@@ -116,7 +116,7 @@
 
     filters: {
       formatNumber (number) {
-        return format({integerSeparator: '.', round: 0})(number);
+        return format({ decimal: ',', integerSeparator: '.', round: 2 })(number);
       }
     },
 
