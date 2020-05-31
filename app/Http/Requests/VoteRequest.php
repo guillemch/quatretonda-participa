@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Voter;
+use App\User;
 use App\Rules\BallotValidity;
 use App\Rules\HasNotVoted;
 use App\Rules\OnCensus;
@@ -21,6 +23,12 @@ class VoteRequest extends FormRequest
      */
     public function authorize()
     {
+        $token = $this->bearerToken();
+        if ($token) {
+            $user = User::where('api_token', $token)->firstOrFail();
+            Auth::login($user);
+        }
+
         return true;
     }
 

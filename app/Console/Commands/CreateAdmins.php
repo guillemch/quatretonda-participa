@@ -59,6 +59,7 @@ class CreateAdmins extends Command
                 'name' => $user,
                 'username' => $user,
                 'password' => bcrypt($randomPassword),
+                'api_token' => Str::random(60),
                 'is_superadmin' => $isSuperadmin
             ]);
         }

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
-use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Edition;
 use App\Voter;
 use App\Report;

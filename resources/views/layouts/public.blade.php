@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    @isset($token)
-        <meta name="jwt-token" content="{{ $token }}">
-    @endisset
+    @if(Auth::user())
+        <meta name="jwt-token" content="{{ Auth::user()->api_token }}">
+    @endif
 
     <title>@yield('title'){{ config('app.name', 'Participa') }}</title>
 
