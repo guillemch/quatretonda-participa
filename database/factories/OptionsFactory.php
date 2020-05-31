@@ -19,6 +19,6 @@ $factory->define(App\Option::class, function (Faker\Generator $faker) {
         'motivation' => $faker->paragraph(6),
         'attachments' => '',
         'cost' => $faker->numberBetween(0,100000),
-        'salt' => str_random(12),
+        'salt' => Str::random(12),
     ];
 });
