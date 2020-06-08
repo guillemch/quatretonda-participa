@@ -67,7 +67,7 @@
                                     <h5>{{ $option['option'] }}</h5>
 
                                     <div class="results__votes">
-                                        <div class="results__points">{{ number($option['points'], 0) }} {{ trans_choice('participa.votes', $option['points']) }}</div>
+                                        <div class="results__points">{{ number($option['points'], 2) }} {{ trans_choice('participa.votes', $option['points']) }}</div>
                                         <div class="progress">
                                             <div class="d-flex" style="width: {{ $option['percentage'] . '%' }}" aria-valuenow="{{ $option['percentage'] }}" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                                                 <div class="progress-bar"></div>
@@ -113,7 +113,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-right align-middle">{{ number($option['points'], 0) }}</td>
+                                    <td class="text-right align-middle">{{ number($option['points'], 2) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
