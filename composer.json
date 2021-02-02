@@ -7,7 +7,7 @@
     "require": {
         "php": ">=7.2",
         "laravel-notification-channels/messagebird": "^2.1",
-        "laravel/framework": "7.0.*",
+        "laravel/framework": "7.30.*",
         "laravel/tinker": "~2.4",
         "laravel/ui": "^2.0",
         "sentry/sentry-laravel": "^1.7.1",
